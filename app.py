@@ -1,30 +1,19 @@
-import pandasdmx as sdmx
+from flask import Flask, render_template, request
+
 import pandas as pd
 
-dataRequest = sdmx.Request('ESTAT')
-dataResponse = dataRequest.data(resource_id='ten00110')
-dataset = dataResponse.to_pandas().to_frame()
+from eurodata import import_data
 
-dataset.reset_index(inplace=True)
-dataset = dataset.dropna()
+data = import_data()
+region = 'Polska'
 
-dataset.sort_values(by=['geo'])
+app = Flask(__name__)
 
-countryKeys = dataset.geo.unique().tolist()
-countryNewValues =  ['Albania', 'Austria', 'Bośnia i Hercegowina', 'Belgia', 'Bułgaria', 'Cypr', 'Czechy', 'Niemcy', 'Dania', 'Estonia', 'Grecja', 'Hiszpania', 'Kraje Unii Europejskiej(od 2020)',
-                  'Finlandia', 'Francja', 'Chorwacja', 'Węgry', 'Irlandia', 'Islandia', 'Włochy', 'Liechtenstein', 'Litwa', 'Luksemburg', 'Łotwa', 'Czarnogóra', 
-                  'Macedonia Północna', 'Malta', 'Holandia', 'Norwegia', 'Polska', 'Portugalia', 'Rumunia', 'Serbia', 'Szwecja', 'Słowenia', 'Słowacja', 'Turcja', 
-                  'Wielka Brytania', 'Kosowo']
-countryMap = dict(zip(countryKeys, countryNewValues))
-countryMap
-dataset.geo = dataset.geo.replace(countryMap)
+@app.route('/')
+def index():
+    return render_template('index.html',
+                           region = region,
+                           dataToPrint = data.loc[[region]].to_html(classes='table'))
 
-wasteTypeKeys = dataset.waste.unique().tolist()
-wasteTypeNewValues = ['Suma odpadów', 'Odpady komunalne', 'Odpady budowlane i rozbiórkowe', 'Odpady przemysłowe',
-                    'Odpady niebezpieczne', 'Inne odpady', 'Osad ściekowy', 'Odpady obojętne']
-wasteTypeMap = dict(zip(wasteTypeKeys, wasteTypeNewValues))
-wasteTypeKeys
-dataset.waste = dataset.waste.replace(wasteTypeMap)
-
-dataset = dataset.set_index(['geo','TIME_PERIOD'])
-dataset = dataset.loc[(dataset['value'] > 0) & (dataset['waste'] == 'Suma odpadów')]
+if __name__ == '__main__':
+    app.run(host="127.0.0.1",port=5000)
