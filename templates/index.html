@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask</title>
     <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet"/>
+    <script type="text/javascript" src="{{ url_for('static', filename='script/script.js') }}" defer></script>
 <body>
     <h1>Flask app</h1>
     <p>Data from {{ region }}</p>
-    <p>{{ dataToPrint|safe }}</p>
+    {{ dataToPrint|safe }}
+    <div id="dropZone1" class="dropzone" data-drop-type="correct"></div>
+    <div id="dropZone2" class="dropzone" data-drop-type="incorrect"></div>
+    <div id="draggableItem" class="draggable" draggable="true">Drag Me</div>
+    <button id="confirmButton">Confirm Choice</button>
 </body>
 </html>
