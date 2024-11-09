@@ -54,7 +54,12 @@ body {
   }
   
   .hidden {
-    opacity: 0.1    ;
+    opacity: 0.1;
     pointer-events: none;
+  }
+
+  #draggableItem.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
   }
   
