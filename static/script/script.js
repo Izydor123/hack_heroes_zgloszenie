@@ -3,7 +3,7 @@ const dropZone1 = document.getElementById("dropZone1");
 const dropZone2 = document.getElementById("dropZone2");
 const confirmButton = document.getElementById("confirmButton");
 
-const originalPosition = {x: draggableItem.offsetLeft, y: draggableItem.offsetTop,};
+const originalPosition = {x: draggableItem.offsetLeft, y: draggableItem.offsetTop};
 let lastDropZone = null;
 let droppedInCorrectZone = false;
 let dropType = null;
