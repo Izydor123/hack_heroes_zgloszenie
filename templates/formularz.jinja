@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabinet Stomatologiczny Kot</title>
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='styles/animate.css') }}" rel="stylesheet"/>
+    <script src="{{ url_for('static', filename='script/wow.min.js') }}"></script>
+    <script>
+        new WOW().init();
+    </script>
+</head>
+
+<body class="homePage">
+    
+    <nav class="siteWidth flexOnCenter">
+        <ul>
+            <li><a href="{{ url_for('index') }}">Strona główna</a></li>
+            <li><a href="{{ url_for('cennik') }}">Cennik</a></li>
+            <li><a href="{{ url_for('kadra') }}">Kadra</a></li>
+            <li><a href="{{ url_for('kontakt') }}">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section class="formSection wideMode siteWidth">
+        <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Logowanie</h2>
+        <article>
+            <section class="sectionForm content wow fadeInLeft" data-wow-duration="1.5s">
+                <form action="zaloguj.php" id="login" method="POST">
+                    <section class="formWrapper">
+                        <section class="inputWrapper">
+                            <input maxlength="64" type="email" name="email" placeholder="E-mail..." required>
+                            <input maxlength="64" type="password" name="haslo" placeholder="Hasło..." required>
+                        </section>
+                        <section class="buttonWrapper">
+                            <section class="registerWrapper">
+                                <p class="registerText">Nie masz konta?</p><a href="rejestracja.php"
+                                    class="button registerButton">Zarejestruj się</a>
+                            </section>
+                            <button type="submit" name="zaloguj" class="button">Zaloguj</button>
+                        </section>
+                    </section>
+                </form>
+            </section>
+            <section class="sectionForm">
+                <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="logo" height="200px" class="wow zoomIn">
+            </section>
+        </article>
+    </section>
+
+    <footer style="position: absolute; width: 100%; bottom: 0;">
+        <section class="footerWrapper">
+            <section class="footerSection siteWidth">
+                <p class="alignFirst">© 2024 gabinetstomatologicznykot.pl Wszelkie prawa zastrzeżone</p>
+                <p><a href="{{ url_for('polityka') }}">Polityka Prywatności</a></p>
+                <p>Projekt i realizacja: Bartosz Wryszcz</p>
+            </section>
+        </section>
+    </footer>
+
+</body>
+
+</html>
