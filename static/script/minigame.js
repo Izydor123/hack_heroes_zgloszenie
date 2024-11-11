@@ -21,11 +21,12 @@ function handleDrop(event){
     const draggableItem = draggableItems[draggableIndex];
     const dropZone = dropZones[dropZoneIndex]
     
+    draggableContainer.removeChild(draggableItem)
     dropZone.appendChild(draggableItem);
     
     draggableItem.classList.add("hidden");
     draggableItem.setAttribute("draggable", "false");
-    
+
     event.target.dataset.itemInIt = draggableIndex;
     correctPlacements[draggableIndex] = draggableItem.getAttribute('value') === dropZone.getAttribute('value');
 }
@@ -42,8 +43,8 @@ function handleClick(event){
 
 function resetDraggableItem(item, zone){
     zone.removeChild(item);
-
     draggableContainer.appendChild(item);
+    
     item.classList.remove("hidden");
     item.setAttribute("draggable", "true");
 }
