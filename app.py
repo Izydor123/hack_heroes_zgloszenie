@@ -21,9 +21,27 @@ scheduler.start()
 
 @app.route('/')
 def index():
-    return render_template('index.html',
-                           region = region,
-                           dataToPrint = data.to_html(classes='table'))
+    return render_template('index.html')
+
+@app.route('/cennik')
+def cennik():
+    return render_template('cennik.html')
+
+@app.route('/formularz')
+def formularz():
+    return render_template('formularz.html')
+
+@app.route('/kadra')
+def kadra():
+    return render_template('kadra.html')
+
+@app.route('/kontakt')
+def kontakt():
+    return render_template('kontakt.html')
+
+@app.route('/polityka')
+def polityka():
+    return render_template('polityka.html')
 
 @app.route('/second')
 def second():

@@ -1,18 +1,179 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask</title>
+    <title>Gabinet Stomatologiczny Kot</title>
     <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet"/>
-    <script type="text/javascript" src="{{ url_for('static', filename='script/script.js') }}" defer></script>
-<body>
-    <h1>Flask app</h1>
-    <p>Data from {{ region }}</p>
-    {{ dataToPrint|safe }}
-    <div id="dropZone1" class="dropzone" data-drop-type="correct"></div>
-    <div id="dropZone2" class="dropzone" data-drop-type="incorrect"></div>
-    <div id="draggableItem" class="draggable" draggable="true">Drag Me</div>
-    <button id="confirmButton">Confirm Choice</button>
+    <link href="{{ url_for('static', filename='styles/animate.css') }}" rel="stylesheet"/>
+    <script src="{{ url_for('static', filename='script/wow.min.js') }}"></script>
+    <script>
+        new WOW().init();
+    </script>
+</head>
+
+<body class="homePage">
+    <nav class="siteWidth flexOnCenter">
+        <ul>
+            <li><a href="{{ url_for('index') }}">Strona główna</a></li>
+            <li><a href="{{ url_for('cennik') }}">Cennik</a></li>
+            <li><a href="{{ url_for('kadra') }}">Kadra</a></li>
+            <li><a href="{{ url_for('kontakt') }}">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section class="heroImage">
+        <img src="{{ url_for('static', filename='img/s1.jpg') }}" alt="doktor">
+    </section>
+
+    <section class="classicSection siteWidth">
+        <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">O nas</h2>
+        <article>
+            <section class="sectionRow content wow fadeInLeft" data-wow-duration="1.5s">
+                <p><span class="stressText"><b>Gabinet Stomatologiczny
+                            Kot</b></span> to
+                    ekskluzywny Zespół Gabinetów
+                    Stomatologicznych „Metamorfoz Twarzy”, w którym stosujemy zaawansowane technologie medyczne dla
+                    zapewnienia zdrowego uśmiechu
+                    <br><br>
+                    Oferujemy wielospecjalistyczne, kompleksowe leczenie stomatologiczne. Kładziemy specjalny nacisk na
+                    estetyczne rozwiązania oraz innowacyjne zabiegi medycyny estetycznej.
+                </p>
+
+                <a href="{{ url_for('kadra') }}" class="button wow fadeInUp" data-wow-duration="1.5s"><span>Poznaj nasz
+                        team</span></a>
+            </section>
+
+            <section class="sectionRow picture wow fadeInRight" data-wow-duration="1.5s">
+                <img src="{{ url_for('static', filename='img/s1.jpg') }}" alt="kadra">
+            </section>
+        </article>
+    </section>
+
+    <section class="price-list">
+        <section class="priceWrapper flexOnCenter">
+            <h2 class="headingTextPrice wow fadeInUp" data-wow-duration="1.5s">Cennik</h2>
+            <table class="flexOnCenter priceTable">
+                <tr>
+                    <td>
+                        <h3>Stomatologia zachowawcza</h3>
+                        <p>konsultacja stomatologiczna, wypełnienie zęba ze znieczuleniem</p>
+                    </td>
+                    <td>
+                        <h3>500 zł</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Periodontologia</h3>
+                        <p>diagnostyka przyzębia, leczenie dziąseł, leczenie kości, diagnostyka dziąseł</p>
+                    </td>
+                    <td>
+                        <h3>2500 zł</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Medycyna estetyczna</h3>
+                        <p>konsultacja specjalisty medycyny estetycznej, wybielanie zębów</p>
+                    </td>
+                    <td>
+                        <h3>1500 zł</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Higienizacja</h3>
+                        <p>piaskowanie, usunięcie kamienia nazębnego, usuwanie osadu, fluoryzacja</p>
+                    </td>
+                    <td>
+                        <h3>350 zł</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Chirurgia</h3>
+                        <p>usunięcie zęba, usunięcie korzenia</p>
+                    </td>
+                    <td>
+                        <h3>1000 zł</h3>
+                    </td>
+                </tr>
+            </table>
+
+            <!--<a href="wizyta.php" class="button buttonLight wow fadeInUp" data-wow-duration="1.5s"><span>Zarezerwuj
+                    wizytę</span></a>-->
+
+        </section>
+
+    </section>
+
+    <section class="classicSection siteWidth reverse">
+        <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Skontaktuj się z nami!</h2>
+        <article>
+            <section class="sectionRow content wow fadeInRight" data-wow-duration="1.5s">
+                <p>Specjaliści z naszego Zespołu Gabinetów
+                    Stomatologicznych są gotowi by służyć
+                    Tobie pomocą.
+                    <br><br>
+                    <b>Gabinet Stomatologiczny Kot</b> to nowoczesny zespół gabinetów stomatologicznych, położony w
+                    centrum
+                    Jeleniej Góry. Świadczy on usługi z zakresu implantologii, protetyki, ortodoncji, endodoncji,
+                    stomatologii zachowawczej oraz chirurgii stomatologicznej.
+                </p>
+
+                <a href="{{ url_for('kontakt') }}" class="button wow fadeInUp" data-wow-duration="1.5s"><span>Kontakt do
+                        nas</span></a>
+            </section>
+
+            <section class="sectionRow pictureSmall flexOnCenter wow fadeInLeft" data-wow-duration="1.5s">
+                <img src="{{ url_for('static', filename='img/s3.jpg') }}" alt="uśmiech">
+            </section>
+        </article>
+    </section>
+
+    <section class="mapSection">
+        <section class="heroMap">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2359.274678093566!2d20.503455329367224!3d53.748991928435586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e278ea097f49d9%3A0x4d459a6f5e989c3d!2sStomatologia%20Kot!5e0!3m2!1spl!2spl!4v1729451407748!5m2!1spl!2spl"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </section>
+
+
+    <section class="sectionInformation siteWidth">
+        <section class="Column">
+            <img src="{{ url_for('static', filename='img/logo_B.png') }}" alt="logo duże" width="100%">
+        </section>
+        <section class="Column ColumnMiddle">
+            <p><b>Gabinet Stomatologiczny Kot</b> to nowoczesny zespół gabinetów stomatologicznych, położony w centrum
+                <b>Olsztyna</b>. Świadczy on usługi z zakresu implantologii, protetyki, ortodoncji, endodoncji,
+                stomatologii
+                zachowawczej oraz chirurgii stomatologicznej.
+            </p>
+        </section>
+        <section class="Column">
+            <p> Barcza 48/6l</p>
+            <p> 10-685 Olsztyn</p>
+            <p> Pon - Pt: 8:00 - 15:00</p>
+            <p> Wizyty dostępne co 30 minut</p>
+            <p> 604 706 270 | 604 706 277</p>
+            <p> info@gabinetstomatologicznykot.pl</p>
+        </section>
+    </section>
+
+    <footer>
+        <section class="footerWrapper">
+            <section class="footerSection siteWidth">
+                <p class="alignFirst">© 2024 gabinetstomatologicznykot.pl Wszelkie prawa zastrzeżone</p>
+                <p><a href="{{ url_for('polityka') }}">Polityka Prywatności</a></p>
+                <p>Projekt i realizacja: Bartosz Wryszcz</p>
+            </section>
+        </section>
+    </footer>
+
 </body>
+
 </html>
