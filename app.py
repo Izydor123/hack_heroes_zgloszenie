@@ -10,14 +10,10 @@ import plotly.io as pio
 
 data = pd.DataFrame()
 
+
 scheduler = APScheduler()
 app = Flask(__name__)
 app.config['SCHEDULER_API_ENABLED'] = True
-
-def fetch_data():
-    global data
-    data = import_data()
-    print("fetching works")
 
 def data_chart():
     global data
@@ -49,21 +45,25 @@ def data_chart():
         'scrollZoom': False,     
         'displaylogo': False,    
         'editable': False,        
-        'showTips': False,             
-        'className': 'custom-plotly-chart'  
+        'showTips': False             
     }
 
     chart_html = pio.to_html(fig, full_html=False, config=config)
     
     return chart_html
 
+def fetch_data():
+    global data
+    global data_plot
+    data = import_data()
+    print("fetching works")
+    data_plot = data_chart()
+
 
 fetch_data()
 
-data_plot = data_chart()
 
 scheduler.add_job(id='GetData', func=fetch_data, trigger='interval', hours=24)
-scheduler.add_job(id='ChartData', func=data_chart, trigger='interval', hours=24)
 scheduler.init_app(app)
 scheduler.start()
 
