@@ -63,7 +63,7 @@ def fetch_data():
 fetch_data()
 
 
-scheduler.add_job(id='GetData', func=fetch_data, trigger='interval', hours=24)
+scheduler.add_job(id='GetData', func=fetch_data, trigger='interval', seconds=24)
 scheduler.init_app(app)
 scheduler.start()
 
