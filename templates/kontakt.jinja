@@ -9,6 +9,8 @@
     <link href="{{ url_for('static', filename='styles/animate.css') }}" rel="stylesheet"/>
     <script src="{{ url_for('static', filename='script/wow.min.js') }}"></script>
     <script src="{{ url_for('static', filename='script/minigame.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='script/table.js') }}" defer></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script>new WOW().init()</script>
 </head>
 
@@ -68,7 +70,8 @@
             <p id="gameResult"></p>
         </section>
 
-        <table class="dataTable">
+        <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Tabeleczka</h2>
+        <table class="dataTable" id="dataTable">
             <thead>
                 <tr>
                     {% for column in data_to_show[0].keys() %}
@@ -86,6 +89,14 @@
                 {% endfor %}
             </tbody>
         </table>
+        <div class="navButtons">
+            <button id="prevButton">Poprzednia Strona</button>
+            <button id="nextButton">Następna Strona</button>
+        </div>
+        <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Wykresik</h2>
+        <section class="Column custom-plotly-chart">
+           {{ plot | safe }}
+        </section>
 
     </section>
 
