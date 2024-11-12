@@ -12,6 +12,7 @@ data = pd.DataFrame()
 
 scheduler = APScheduler()
 app = Flask(__name__)
+app.config['SCHEDULER_API_ENABLED'] = True
 
 def fetch_data():
     global data
@@ -62,7 +63,8 @@ fetch_data()
 data_plot = data_chart()
 
 scheduler.add_job(id='GetData', func=fetch_data, trigger='interval', hours=24)
-scheduler.add_job(id='ChartData', func=data_chart, trigger='interval', seconds=24)
+scheduler.add_job(id='ChartData', func=data_chart, trigger='interval', hours=24)
+scheduler.init_app(app)
 scheduler.start()
 
 @app.route('/')
