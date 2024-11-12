@@ -1,47 +1,45 @@
-import pandasdmx as sdmx
+import pandasdmx as dmx
 import pandas as pd
 
-def import_data(region: str) -> pd.DataFrame:
+def import_data() -> pd.DataFrame:
     try:
 
-        dataRequest = sdmx.Request('ESTAT')
+        dataRequest = dmx.Request('ESTAT')
         dataResponse = dataRequest.data(resource_id='ten00110')
-        dataset = dataResponse.to_pandas().to_frame()
+        datasetToPrint = dataResponse.to_pandas().to_frame()
 
-        dataset.reset_index(inplace=True)
+        datasetToPrint.reset_index(inplace=True)
 
-        dataset = dataset.dropna()
+        datasetToPrint = datasetToPrint.dropna()
 
-        dataset.sort_values(by=['geo'])
+        datasetToPrint.sort_values(by=['geo'])
 
-        countryKeys = dataset.geo.unique().tolist()
+        countryKeys = datasetToPrint.geo.unique().tolist()
         countryNewValues =  ['Albania', 'Austria', 'Bośnia i Hercegowina', 'Belgia', 'Bułgaria', 'Cypr', 'Czechy', 'Niemcy', 'Dania', 'Estonia', 'Grecja', 'Hiszpania', 'Kraje Unii Europejskiej(od 2020)',
                     'Finlandia', 'Francja', 'Chorwacja', 'Węgry', 'Irlandia', 'Islandia', 'Włochy', 'Liechtenstein', 'Litwa', 'Luksemburg', 'Łotwa', 'Czarnogóra', 
                     'Macedonia Północna', 'Malta', 'Holandia', 'Norwegia', 'Polska', 'Portugalia', 'Rumunia', 'Serbia', 'Szwecja', 'Słowenia', 'Słowacja', 'Turcja', 
                     'Wielka Brytania', 'Kosowo']
         countryMap = dict(zip(countryKeys, countryNewValues))
         countryMap
-        dataset.geo = dataset.geo.replace(countryMap)
+        datasetToPrint.geo = datasetToPrint.geo.replace(countryMap)
 
-        wasteTypeKeys = dataset.waste.unique().tolist()
+        wasteTypeKeys = datasetToPrint.waste.unique().tolist()
         wasteTypeNewValues = ['Suma odpadów', 'Odpady komunalne', 'Odpady budowlane i rozbiórkowe', 'Odpady przemysłowe',
                         'Odpady niebezpieczne', 'Inne odpady', 'Osad ściekowy', 'Odpady obojętne']
         wasteTypeMap = dict(zip(wasteTypeKeys, wasteTypeNewValues))
         wasteTypeKeys
-        dataset.waste = dataset.waste.replace(wasteTypeMap)
+        datasetToPrint.waste = datasetToPrint.waste.replace(wasteTypeMap)
 
-        dataset = dataset.set_index(['geo','TIME_PERIOD'])
+        datasetToPrint = datasetToPrint.set_index(['geo','TIME_PERIOD'])
+        datasetToPrint = datasetToPrint.drop(index=(['Kraje Unii Europejskiej(od 2020)','Kosowo', 'Liechtenstein']))
 
-        dataset = dataset.loc[(dataset['value'] > 0) & (dataset['waste'] == 'Suma odpadów')]
+        datasetToPrint = datasetToPrint.loc[(datasetToPrint['value'] > 0) & (datasetToPrint['waste'] == 'Suma odpadów')]
+        datasetToPrint = datasetToPrint.xs('2022',level='TIME_PERIOD')
         
-        dataset = dataset.drop(['hazard','freq','waste','unit','nace_r2'], axis=1)
+        datasetToPrint = datasetToPrint.drop(['hazard','freq','waste','unit','nace_r2'], axis=1).reset_index()
 
-        return dataset.loc[[region]]
+        return datasetToPrint.rename(columns={"geo":"Region","value":"Suma odpadów wyprodukowana w 2022"})
     
     except Exception as e:
 
         print(f"An error occurred while importing data: {e}")
-
-    
-
- 
