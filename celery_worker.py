@@ -1,4 +1,3 @@
-from celery import Celery
 from app import celery
 from datetime import timedelta
 
