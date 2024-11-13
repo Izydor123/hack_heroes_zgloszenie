@@ -5,8 +5,8 @@ from celery import Celery
 app = Flask(__name__)
 
 app.config.update(
-    CELERY_BROKER_URL='redis://localhost:6379/0',
-    CELERY_RESULT_BACKEND='redis://localhost:6379/0'
+    CELERY_BROKER_URL='redis://red-csqelgd6l47c73dsk9sg:6379',
+    CELERY_RESULT_BACKEND='redis://red-csqelgd6l47c73dsk9sg:6379'
 )
 
 def make_celery(app):
@@ -26,8 +26,8 @@ def make_celery(app):
 
 celery = make_celery(app)   
 
-fetched_data = None
-data_plot = None
+fetched_data = import_data()
+data_plot = data_chart()
 
 @app.route('/')
 def index():
@@ -49,10 +49,6 @@ def kadra():
 def kontakt():
     global fetched_data
     global data_plot
-    if fetched_data is None:
-        fetched_data = import_data()
-    if data_plot is None:
-        data_plot = data_chart(fetched_data)
     return render_template('kontakt.jinja',
                            data_to_show=fetched_data.to_dict(orient="records"),
                            plot=data_plot)
