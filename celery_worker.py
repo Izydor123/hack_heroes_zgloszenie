@@ -5,7 +5,7 @@ from datetime import timedelta
 celery.conf.beat_schedule = {
     'update-data-every-hour': {
         'task': 'tasks.update_data_task',
-        'schedule': timedelta(seconds=10),
+        'schedule': timedelta(hours=24),
     },
 }
 
