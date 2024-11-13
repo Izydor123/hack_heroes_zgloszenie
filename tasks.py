@@ -1,11 +1,11 @@
 from celery import Celery
-from app import celery, app, cached_data
-from data import import_data
-from datetime import datetime
+from app import celery, app, fetched_data
+from data import import_data, data_chart
 
 @celery.task
 def update_data_task():
-    global cached_data
+    global fetched_data
+    global data_plot
     with app.app_context():
-        cached_data = import_data()
-        print(f"Data updated at {datetime.now()}")
+        fetched_data = import_data()
+        data_plot = data_chart(fetched_data)
