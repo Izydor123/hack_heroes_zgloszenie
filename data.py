@@ -1,6 +1,9 @@
 import pandasdmx as dmx
 import pandas as pd
 
+import plotly.graph_objects as go
+import plotly.io as pio
+
 def import_data() -> pd.DataFrame:
     try:
 
@@ -43,3 +46,38 @@ def import_data() -> pd.DataFrame:
     except Exception as e:
 
         print(f"An error occurred while importing data: {e}")
+
+def data_chart(dataset):
+    fig = go.Figure(
+        data=[
+            go.Bar(
+                x=dataset['Region'], 
+                y=dataset['Suma odpadów wyprodukowana w 2022'],
+                marker=dict(color='skyblue'),
+                hoverinfo="y"
+            )
+        ]
+    )
+    
+    fig.update_layout(
+        xaxis_title='Region',
+        yaxis_title='Suma odpadów wyprodukowana w 2022',
+        template="plotly_white",
+        width=1400, 
+        height=1200,
+        dragmode=False,
+        hovermode=None, 
+        showlegend=False
+    )
+
+    config = {
+        'displayModeBar': False,    
+        'scrollZoom': False,     
+        'displaylogo': False,    
+        'editable': False,        
+        'showTips': False             
+    }
+
+    chart_html = pio.to_html(fig, full_html=False, config=config)
+    
+    return chart_html
