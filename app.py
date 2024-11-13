@@ -1,8 +1,6 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template
 from data import import_data, data_chart
 from celery import Celery
-from datetime import datetime
-import os
 
 app = Flask(__name__)
 
