@@ -1,71 +1,7 @@
 from flask import Flask, render_template, request
-from flask_apscheduler import APScheduler
+from data import import_data, data_chart
 
-import pandas as pd
-from eurodata import import_data
-
-import plotly.graph_objects as go
-import plotly.io as pio
-
-
-data = pd.DataFrame()
-
-
-scheduler = APScheduler()
 app = Flask(__name__)
-app.config['SCHEDULER_API_ENABLED'] = True
-
-def data_chart():
-    global data
-
-    fig = go.Figure(
-        data=[
-            go.Bar(
-                x=data['Region'], 
-                y=data['Suma odpadów wyprodukowana w 2022'],
-                marker=dict(color='skyblue'),
-                hoverinfo="y"
-            )
-        ]
-    )
-    
-    fig.update_layout(
-        xaxis_title='Region',
-        yaxis_title='Suma odpadów wyprodukowana w 2022',
-        template="plotly_white",
-        width=1400, 
-        height=1200,
-        dragmode=False,
-        hovermode=None, 
-        showlegend=False
-    )
-
-    config = {
-        'displayModeBar': False,    
-        'scrollZoom': False,     
-        'displaylogo': False,    
-        'editable': False,        
-        'showTips': False             
-    }
-
-    chart_html = pio.to_html(fig, full_html=False, config=config)
-    
-    return chart_html
-
-def fetch_data():
-    global data
-    global data_plot
-    data = import_data()
-    print("fetching works")
-    data_plot = data_chart()
-
-
-fetch_data()
-
-
-scheduler.add_job(id='GetData', func=fetch_data, trigger='interval', seconds=24)
-scheduler.init_app(app)
-scheduler.start()
 
 @app.route('/')
 def index():
@@ -85,9 +21,10 @@ def kadra():
 
 @app.route('/kontakt')
 def kontakt():
+    data = import_data()
     return render_template('kontakt.jinja',
                            data_to_show = data.to_dict(orient="records"),
-                           plot = data_plot)
+                           plot = data_chart(data))
 
 @app.route('/polityka')
 def polityka():
