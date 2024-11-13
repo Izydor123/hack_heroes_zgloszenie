@@ -1,4 +1,3 @@
-from celery import Celery
 from app import celery, app, fetched_data
 from data import import_data, data_chart
 
