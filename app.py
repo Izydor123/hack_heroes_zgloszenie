@@ -27,7 +27,7 @@ def make_celery(app):
 celery = make_celery(app)   
 
 fetched_data = import_data()
-data_plot = data_chart()
+data_plot = data_chart(fetched_data)
 
 @app.route('/')
 def index():
