@@ -24,9 +24,10 @@ def make_celery(app):
     celery.Task = ContextTask
     return celery
 
-celery = make_celery(app)
+celery = make_celery(app)   
 
-cached_data = None
+fetched_data = None
+data_plot = None
 
 @app.route('/')
 def index():
@@ -46,12 +47,15 @@ def kadra():
 
 @app.route('/kontakt')
 def kontakt():
-    global cached_data
-    if cached_data is None:
-        cached_data = import_data()
+    global fetched_data
+    global data_plot
+    if fetched_data is None:
+        fetched_data = import_data()
+    if data_plot is None:
+        data_plot = data_chart(fetched_data)
     return render_template('kontakt.jinja',
-                           data_to_show=cached_data.to_dict(orient="records"),
-                           plot=data_chart(cached_data))
+                           data_to_show=fetched_data.to_dict(orient="records"),
+                           plot=data_plot)
 
 @app.route('/polityka')
 def polityka():
