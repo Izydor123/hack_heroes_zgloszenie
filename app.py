@@ -1,5 +1,6 @@
 from flask import Flask, render_template
-from data import import_data, data_chart
+from eurodata import import_data, data_chart
+from pldata import PLWasteCharts
 from celery import Celery
 
 app = Flask(__name__)
@@ -26,8 +27,11 @@ def make_celery(app):
 
 celery = make_celery(app)   
 
-fetched_data = import_data()
-data_plot = data_chart(fetched_data)
+euro_fetched_data = import_data()
+euro_data_plot = data_chart(euro_fetched_data)
+
+pl_all_waste = PLWasteCharts('odpady_ogolne.csv')
+pl_communal_waste = PLWasteCharts('odpady_komunalne.csv')
 
 @app.route('/')
 def index():
@@ -47,11 +51,15 @@ def kadra():
 
 @app.route('/kontakt')
 def kontakt():
-    global fetched_data
-    global data_plot
+    global euro_fetched_data
+    global euro_data_plot
+    global pl_all_waste
+    global pl_communal_waste
     return render_template('kontakt.jinja',
-                           data_to_show=fetched_data.to_dict(orient="records"),
-                           plot=data_plot)
+                           euro_data_to_show=euro_fetched_data.to_dict(orient="records"),
+                           euro_plot=euro_data_plot,
+                           pl_all_plots = pl_all_waste,
+                           pl_communal_plots  = pl_communal_waste)
 
 @app.route('/polityka')
 def polityka():

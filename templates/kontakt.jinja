@@ -74,13 +74,13 @@
         <table class="dataTable" id="dataTable">
             <thead>
                 <tr>
-                    {% for column in data_to_show[0].keys() %}
+                    {% for column in euro_data_to_show[0].keys() %}
                         <th>{{ column }}</th>
                     {% endfor %}
                 </tr>
             </thead>
             <tbody>
-                {% for row in data_to_show %}
+                {% for row in euro_data_to_show %}
                     <tr>
                         {% for value in row.values() %}
                             <td>{{ value }}</td>
@@ -95,10 +95,41 @@
         </div>
         <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Wykresik</h2>
         <section class="Column custom-plotly-chart">
-           {{ plot | safe }}
+           {{ euro_plot | safe }}
         </section>
+    
+    <section class="Column">
+        <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Ilość wszystkich odpadów wyprodukowanych w Polsce w latach 2003-2023</h2>
 
+        <h3 class="headingText wow fadeInUp" data-wow-duration="1.5s">Masa wyprodukowanych odpadów(w tysiącach ton) z podziałem na województwa</h3>
+        <p>Źródło danych: Baza danych lokalnych GUS</p>
+        <div style="margin-bottom: 50px;" class="custom-plotly-chart">
+            {{ pl_all_plots[0] | safe }}
+        </div>
+
+        <h3 class="headingText wow fadeInUp" data-wow-duration="1.5s">Suma wszystkich wyprodukowanych odpadów w Polsce</h3>
+        <p>Źródło danych: Baza danych lokalnych GUS</p>
+        <div style="margin-bottom: 50px;" class="custom-plotly-chart">
+            {{ pl_all_plots[1] | safe }}
+        </div>
+
+        <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Ilość odpadów(w tysiącach ton) wyprodukowanych przez  w Polsce z podziałem na województwa</h2>
+
+        <h3 class="headingText wow fadeInUp" data-wow-duration="1.5s">Masa wyprodukowanych odpadów(w tysiącach ton) z podziałem na województwa</h3>
+        <p>Źródło danych: Baza danych lokalnych GUS</p>
+        <div style="margin-bottom: 50px;" class="custom-plotly-chart">
+            {{ pl_communal_plots[0] | safe }}
+        </div>
+
+        <h3 class="headingText wow fadeInUp" data-wow-duration="1.5s">Suma wszystkich wyprodukowanych odpadów w Polsce</h3>
+        <p>Źródło danych: Baza danych lokalnych GUS</p>
+        <div style="margin-bottom: 50px;" class="custom-plotly-chart">
+            {{ pl_communal_plots[1] | safe }}
+        </div>
     </section>
+    
+    
+  
 
     <footer>
         <section class="footerWrapper">
