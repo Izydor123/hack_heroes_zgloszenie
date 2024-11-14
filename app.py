@@ -35,35 +35,43 @@ pl_communal_waste = PLWasteCharts('odpady_komunalne.csv')
 
 @app.route('/')
 def index():
-    return render_template('index.jinja')
+    return render_template('index.html')
 
-@app.route('/cennik')
-def cennik():
-    return render_template('cennik.jinja')
+@app.route('/artykuly')
+def artykuly():
+    return render_template('artykuly.html')
 
-@app.route('/formularz')
-def formularz():
-    return render_template('formularz.jinja')
+@app.route('/autorzy')
+def autorzy():
+    return render_template('autorzy.html')
 
 @app.route('/kadra')
 def kadra():
-    return render_template('kadra.jinja')
+    return render_template('kadra.html')
 
-@app.route('/kontakt')
-def kontakt():
+@app.route('/dane')
+def dane():
     global euro_fetched_data
     global euro_data_plot
     global pl_all_waste
     global pl_communal_waste
-    return render_template('kontakt.jinja',
+    return render_template('dane.html',
                            euro_data_to_show=euro_fetched_data.to_dict(orient="records"),
                            euro_plot=euro_data_plot,
                            pl_all_plots = pl_all_waste,
                            pl_communal_plots  = pl_communal_waste)
 
-@app.route('/polityka')
+@app.route('/minigra')
 def polityka():
-    return render_template('polityka.jinja')
+    return render_template('minigra.html')
+
+@app.route('/segregacja')
+def segregacja():
+    return render_template('segregacja.html')
+
+@app.route('/zagrozenia')
+def zagrozenia():
+    return render_template('zagrozenia.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
