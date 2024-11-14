@@ -27,11 +27,11 @@ def make_celery(app):
 
 celery = make_celery(app)   
 
-euro_fetched_data = import_data()
+"""euro_fetched_data = import_data()
 euro_data_plot = data_chart(euro_fetched_data)
 
 pl_all_waste = PLWasteCharts('odpady_ogolne.csv')
-pl_communal_waste = PLWasteCharts('odpady_komunalne.csv')
+pl_communal_waste = PLWasteCharts('odpady_komunalne.csv')"""
 
 @app.route('/')
 def index():
@@ -55,14 +55,10 @@ def dane():
     global euro_data_plot
     global pl_all_waste
     global pl_communal_waste
-    return render_template('dane.html',
-                           euro_data_to_show=euro_fetched_data.to_dict(orient="records"),
-                           euro_plot=euro_data_plot,
-                           pl_all_plots = pl_all_waste,
-                           pl_communal_plots  = pl_communal_waste)
+    return render_template('dane.html')
 
 @app.route('/minigra')
-def polityka():
+def minigra():
     return render_template('minigra.html')
 
 @app.route('/segregacja')
@@ -75,3 +71,15 @@ def zagrozenia():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+    """@app.route('/kontakt')
+def kontakt():
+    global euro_fetched_data
+    global euro_data_plot
+    global pl_all_waste
+    global pl_communal_waste
+    return render_template('kontakt.html',
+                           euro_data_to_show=euro_fetched_data.to_dict(orient="records"),
+                           euro_plot=euro_data_plot,
+                           pl_all_plots = pl_all_waste,
+                           pl_communal_plots  = pl_communal_waste)"""
