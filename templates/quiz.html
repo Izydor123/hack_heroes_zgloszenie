@@ -124,7 +124,7 @@
 <body>
     <h1>Quiz</h1>
     <form action="/submit" method="post" onsubmit="submitQuiz(event)">
-        {% for index, question in enumerate(questions) %}
+        {% for question in questions %}
             <fieldset>
                 <legend>{{ question.question }}</legend>
                 {% for option in question.options %}
