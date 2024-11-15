@@ -35,16 +35,19 @@ pl_communal_waste = PLWasteCharts('odpady_komunalne.csv')
 
 questions = [
     {
+        "index": "1",
         "question": "What is the capital of France?",
         "options": ["Paris", "Berlin", "Madrid", "Rome"],
         "answer": "Paris"
     },
     {
+        "index": "2",
         "question": "What is 2 + 2?",
         "options": ["3", "4", "5", "6"],
         "answer": "4"
     },
     {
+        "index": "3",
         "question": "Which programming language is Flask based on?",
         "options": ["Python", "Java", "C++", "Ruby"],
         "answer": "Python"
