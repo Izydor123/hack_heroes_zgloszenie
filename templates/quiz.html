@@ -129,7 +129,7 @@
                 <legend>{{ question.question }}</legend>
                 {% for option in question.options %}
                     <label>
-                        <input type="radio" name="question-{{ index }}" value="{{ option }}" required>
+                        <input type="radio" name="question-{{ question.index }}" value="{{ option }}" required>
                         {{ option }}
                     </label>
                 {% endfor %}
