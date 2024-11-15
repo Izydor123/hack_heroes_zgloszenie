@@ -28,6 +28,11 @@
 <body class="homePage">
 
     <nav id="topMenu" class="flexOnCenter">
+        <section class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </section>
         <ul class="siteWidth">
             <li><a href="{{ url_for('index') }}">Strona główna</a></li>
             <li><a href="{{ url_for('dane') }}">Dane</a></li>
@@ -187,7 +192,7 @@
 
     <script>
 
-        $(document).ready(function () {
+         $(document).ready(function () {
             $(window).scroll(function () {
                 $('body').toggleClass('act', $(this).scrollTop() > 40);
             });
@@ -202,6 +207,42 @@
                 $('html, body').animate({
                     scrollTop: $('.currentPosition').offset().top
                 }, 1000);
+            });
+
+            $('.hamburger').click(function () {
+                $('#topMenu').toggleClass('columnOn');
+            });
+
+            $('.articleSlider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 3000,
+                centerMode: true,
+                centerPadding: '60px',
+                dots: true,
+                prevArrow: "<section class='sliderArrow prevArrow'><img src='{{ url_for('static', filename='svg/strzalkaLewo.svg') }}'></section>",
+                nextArrow: "<section class='sliderArrow nextArrow'><img src='{{ url_for('static', filename='svg/strzalkaPrawo.svg') }}'></section>",
+                arrows: true,
+                responsive: [
+                    {
+                        breakpoint: 1280,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            centerMode: false
+                        }
+                    },
+                    {
+                        breakpoint: 980,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 2,
+                            centerPadding: '0',
+                            centerMode: true
+                        }
+                    }
+                ]
             });
 
         });

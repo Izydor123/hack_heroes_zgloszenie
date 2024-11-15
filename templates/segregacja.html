@@ -18,6 +18,7 @@
 
     <script src="{{ url_for('static', filename='jQuerry/jQuerry.js') }}"></script>
     <script src="{{ url_for('static', filename='slick/slick.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='quiz.js') }}"></script>
     <script src="{{ url_for('static', filename='WOW/wow.min.js') }}"></script>
     <script>
         new WOW().init();
@@ -28,6 +29,11 @@
 <body class="homePage">
 
     <nav id="topMenu" class="flexOnCenter">
+        <section class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </section>
         <ul class="siteWidth">
             <li><a href="{{ url_for('index') }}">Strona główna</a></li>
             <li><a href="{{ url_for('dane') }}">Dane</a></li>
@@ -51,8 +57,7 @@
         <aside class="heroInfo">
             <section class=" heroInfoContent wow fadeInUp" data-wow-duration="1.5s">
                 <h2 class="heroSubtitle">Segregowanie dla każdego</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus leo in interdum egestas.
-                    Integer eget fermentum sem. Quisque et sapien vel metus volutpat tempor efficitur eget eros.
+                <p> Czyli krótki poradnik jakie śmieci wyrzucać gdzie.
                 </p>
                 <a class="button buttonCurrent"><span>Czytaj więcej</span></a>
             </section>
@@ -66,6 +71,147 @@
 
     </header>
 
+    <section class="classicSection siteWidth currentPosition wow fadeIn currentPosition" data-wow-duration="1s">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Plastik i Metal</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s">
+                    •	<b>Co zalicza się do tej kategorii?</b><br>
+                    o	Butelki i opakowania plastikowe, np. po napojach, środkach czystości<br>
+                    o	Torebki foliowe, folia aluminiowa<br>
+                    o	Puszki po napojach, konserwach<br>
+                    o	Kartony po mleku i sokach (typu Tetra Pak)<br>
+                    •	<b>Gdzie wyrzucać?</b><br>
+                    o	Pojemnik <b>żółty</b><br>
+                    •   Pamiętaj, aby przed wyrzuceniem odpadów zgnieść butelki plastikowe, co pozwoli na zaoszczędzenie miejsca
+                </p>
+            </section>
+
+            <section class=" sectionRow picture wow fadeInUp" data-wow-duration="1.5s">
+                <img src="{{ url_for('static', filename='img/plastic.jpg') }}" alt="plastik">
+            </section>
+        </article>
+    </section> 
+
+    <section class="classicSection siteWidth reverse currentPosition wow fadeIn currentPosition" data-wow-duration="1s">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Papier</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s">
+                    •	<b>Co zalicza się do tej kategorii? </b><br>
+                    o	Gazety, czasopisma<br>
+                    o	Pudełka kartonowe, opakowania papierowe<br>
+                    o	Torebki papierowe, zeszyty, papier do pisania<br>
+                    •	<b>Gdzie wyrzucać?</b><br>
+                    o	Pojemnik <b>niebieski</b><br>
+                    •   Brudny papier, np. tłusty karton po pizzy, nie nadaje się do recyklingu i należy go wyrzucić do odpadów zmieszanych.
+                </p>
+            </section>
+
+            <section class=" sectionRow picture wow fadeInUp" data-wow-duration="1.5s">
+                <img src="{{ url_for('static', filename='img/papier.jpg') }}" alt="papier">
+            </section>
+        </article>
+    </section> 
+
+    <section class="classicSection siteWidth currentPosition wow fadeIn currentPosition" data-wow-duration="1s">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Szkło</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s">
+                    •	<b>Co zalicza się do tej kategorii?</b><br>
+                    o	Butelki szklane po napojach (bez kapsli, nakrętek)<br>
+                    o	Słoiki szklane (bez pokrywek)<br>
+                    o	Opakowania szklane po kosmetykach (o ile są czyste) <br>               
+                    •	<b>Gdzie wyrzucać?</b><br>
+                    o	Pojemnik <b>zielony</b><br>
+                    •   W niektórych miejscach dostępne są oddzielne pojemniki na szkło kolorowe (zielony) i bezbarwne (biały). Nigdy nie wrzucaj tu ceramiki, szkła stołowego (np. szklanek), luster ani szyb.
+                </p>
+            </section>
+
+            <section class=" sectionRow picture wow fadeInUp" data-wow-duration="1.5s">
+                <img src="{{ url_for('static', filename='img/szklo.jpg') }}" alt="szklo">
+            </section>
+        </article>
+    </section> 
+
+    <section class="classicSection siteWidth reverse currentPosition wow fadeIn currentPosition" data-wow-duration="1s">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Odpady organiczne</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s">
+                    •	<b>Co zalicza się do tej kategorii? </b><br>
+                    o	Resztki warzyw i owoców<br>
+                    o	Fusy po kawie, herbacie<br>
+                    o	Skorupki jajek, obierki, trawa, liście, drobne gałęzie<br>                
+                    •	<b>Gdzie wyrzucać?</b><br>
+                    o	Pojemnik <b>brązowy</b><br>
+                    •   Należy unikać wrzucania mięsa, kości oraz odpadów kuchennych z tłuszczem, które są trudne do kompostowania.
+                </p>
+            </section>
+
+            <section class=" sectionRow picture wow fadeInUp" data-wow-duration="1.5s">
+                <img src="{{ url_for('static', filename='img/bio.jpg') }}" alt="bio">
+            </section>
+        </article>
+    </section> 
+
+    <section class="classicSection siteWidth currentPosition wow fadeIn" data-wow-duration="1s">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Odpady zmieszane</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s">
+                    •	<b>Co zalicza się do tej kategorii?</b><br>
+                    o	Odpady, których nie można segregować, np. zużyte pieluchy<br>
+                    o	Silnie zabrudzone opakowania, np. tłusty papier, zanieczyszczone folie<br>
+                    o	Porcelana, ceramika, szkło żaroodporne<br>
+                    •	<b>Gdzie wyrzucać?</b><br>
+                    o	Pojemnik <b>czarny</b><br>
+                    •   Wyrzucamy tu wszystko, co nie podlega recyklingowi i nie nadaje się do kompostowania.
+                </p>
+            </section>
+
+            <section class=" sectionRow picture wow fadeInUp" data-wow-duration="1.5s">
+                <img src="{{ url_for('static', filename='img/mieszane.jpg') }}" alt="kadra">
+            </section>
+        </article>
+    </section> 
+
+    <section class="separatorImage">
+        <section class="separatorWrapper flexOnCenter wow fadeInUp" data-wow-duration="1.5s">
+            <section class="separatorContent siteWidth wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="headingTextSeparator">Quiz</h2>
+                <p>
+                    Sprawdź teraz swoją wiedzę w prostym quizie.
+                </p>
+                <form action="/submit" method="post" onsubmit="submitQuiz(event)">
+                    {% for question in questions %}
+                        <fieldset>
+                            <legend>{{ question.question }}</legend>
+                            {% for option in question.options %}
+                                <label>
+                                    <input type="radio" name="question-{{ question.index }}" value="{{ option }}" required>
+                                    {{ option }}
+                                </label>
+                            {% endfor %}
+                        </fieldset>
+                    {% endfor %}
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+        </section>
+    </section>
+
+
+
+    <!-- Custom Modal -->
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <h2>Wyniki</h2>
+            <p id="modal-message"></p>
+            <button onclick="closeModal()">Zamknij</button>
+        </div>
+    </div>
     <!-- <section class="classicSection siteWidth currentPosition wow fadeIn" data-wow-duration="1s">
         <article>
             <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s">
@@ -92,20 +238,6 @@
         </article>
     </section> -->
 
-    <!-- <section class="chartList">
-        <section class="chartWrapper flexOnCenter">
-            <h2 class="headingTextChart wow fadeInUp" data-wow-duration="1.5s">Wykresy</h2>
-
-            <section class="siteWidth">
-                <p>Tutaj umieść parę wykresów dobry człowieku</p>
-
-            </section>
-
-            <a href="dane.html" class="button buttonLight wow fadeInUp" data-wow-duration="1.5s"><span>Zobacz
-                    więcej</span></a>
-
-        </section>
-    </section> -->
 
     <!-- <section class="classicSection siteWidth reverse wow fadeIn" data-wow-duration="1s">
         <article>
@@ -187,7 +319,7 @@
 
     <script>
 
-        $(document).ready(function () {
+         $(document).ready(function () {
             $(window).scroll(function () {
                 $('body').toggleClass('act', $(this).scrollTop() > 40);
             });
@@ -202,6 +334,42 @@
                 $('html, body').animate({
                     scrollTop: $('.currentPosition').offset().top
                 }, 1000);
+            });
+
+            $('.hamburger').click(function () {
+                $('#topMenu').toggleClass('columnOn');
+            });
+
+            $('.articleSlider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 3000,
+                centerMode: true,
+                centerPadding: '60px',
+                dots: true,
+                prevArrow: "<section class='sliderArrow prevArrow'><img src='{{ url_for('static', filename='svg/strzalkaLewo.svg') }}'></section>",
+                nextArrow: "<section class='sliderArrow nextArrow'><img src='{{ url_for('static', filename='svg/strzalkaPrawo.svg') }}'></section>",
+                arrows: true,
+                responsive: [
+                    {
+                        breakpoint: 1280,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            centerMode: false
+                        }
+                    },
+                    {
+                        breakpoint: 980,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 2,
+                            centerPadding: '0',
+                            centerMode: true
+                        }
+                    }
+                ]
             });
 
         });
