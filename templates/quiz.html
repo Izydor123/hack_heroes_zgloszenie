@@ -111,18 +111,9 @@
             // Show results in the modal
             const modal = document.getElementById('result-modal');
             const modalMessage = document.getElementById('modal-message');
-            
-            modal.style.display = 'block';
 
-            document.addEventListener("DOMContentLoaded", function(){
-               if(localStorage.getItem("firstVisit")){
-                    modalMessage.innerHTML = `You answered <strong>${result.correct}</strong> out of <strong>${result.total}</strong> questions correctly!`;
-               } 
-                else{
-                    localStorage.setItem("firstVisit","true");
-                    modalMessage.innerHTML = `You answered <strong>${result.correct}</strong> out of <strong>${result.total}</strong> questions correctly for the first time!`;
-                }
-            });
+            modalMessage.innerHTML = `You answered <strong>${result.correct}</strong> out of <strong>${result.total}</strong> questions correctly!`;
+            modal.style.display = 'block';
         }
 
         function closeModal() {
