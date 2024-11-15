@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from eurodata import import_data, data_chart
 from pldata import PLWasteCharts
 from celery import Celery
