@@ -7,25 +7,68 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 80%;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            margin-bottom: 15px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
 
         /* Modal styles */
         .modal {
-            display: none; /* Hidden by default */
+            display: none;
             position: fixed;
             z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         .modal-content {
-            background-color: #fefefe;
+            background-color: white;
             margin: 15% auto;
             padding: 20px;
-            border: 1px solid #888;
             border-radius: 8px;
             width: 50%;
             text-align: center;
@@ -33,56 +76,42 @@
         }
 
         .modal-content h2 {
-            margin: 0 0 15px;
-        }
-
-        .modal-content p {
-            margin: 10px 0;
+            margin-bottom: 15px;
         }
 
         .modal-content button {
-            background-color: #4CAF50;
+            background-color: #28a745;
             color: white;
             border: none;
             padding: 10px 20px;
-            margin-top: 10px;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
         }
 
         .modal-content button:hover {
-            background-color: #45a049;
+            background-color: #218838;
         }
     </style>
     <script>
         async function submitQuiz(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault(); // Prevent form submission
+
             const form = event.target;
             const formData = new FormData(form);
 
-            // Send form data to the server
+            // Fetch results from the server
             const response = await fetch(form.action, {
                 method: 'POST',
                 body: formData
             });
 
-            // Get the HTML content of the response
-            const resultHtml = await response.text();
+            const result = await response.json();
 
-            // Extract the results from the response HTML
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(resultHtml, 'text/html');
-            const resultMessage = doc.querySelector('p').textContent;
-
-            // Display the results in the modal
-            showModal(resultMessage);
-        }
-
-        function showModal(message) {
+            // Show results in the modal
             const modal = document.getElementById('result-modal');
             const modalMessage = document.getElementById('modal-message');
-            modalMessage.textContent = message;
+            modalMessage.innerHTML = `You answered <strong>${result.correct}</strong> out of <strong>${result.total}</strong> questions correctly!`;
             modal.style.display = 'block';
         }
 
@@ -93,7 +122,7 @@
     </script>
 </head>
 <body>
-    <h1>Quiz Form</h1>
+    <h1>Quiz</h1>
     <form action="/submit" method="post" onsubmit="submitQuiz(event)">
         {% for index, question in enumerate(questions) %}
             <fieldset>
@@ -102,14 +131,14 @@
                     <label>
                         <input type="radio" name="question-{{ index }}" value="{{ option }}" required>
                         {{ option }}
-                    </label><br>
+                    </label>
                 {% endfor %}
             </fieldset>
         {% endfor %}
         <button type="submit">Submit</button>
     </form>
 
-    <!-- Modal for Results -->
+    <!-- Custom Modal -->
     <div id="result-modal" class="modal">
         <div class="modal-content">
             <h2>Quiz Results</h2>
@@ -119,4 +148,3 @@
     </div>
 </body>
 </html>
-
