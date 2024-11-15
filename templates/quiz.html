@@ -113,14 +113,12 @@
             const modalMessage = document.getElementById('modal-message');
 
             //modalMessage.innerHTML = `You answered <strong>${result.correct}</strong> out of <strong>${result.total}</strong> questions correctly!`;
-            document.addEventListener("DOMContentLoaded", function() {
-    if (localStorage.getItem("firstVisit")) {
-        modalMessage.innerHTML = "Welcome back! You've already seen the first response.";
-    } else {
-        localStorage.setItem("firstVisit", "true");
-        modalMessage.innerHTML = "Hello! This is your first visit.";
-    }
-});
+            if (!localStorage.getItem('firstVisit')) {
+                localStorage.setItem('firstVisit', 'true');
+                alert("Welcome! This is your first visit.");
+            } else {
+                alert("Welcome back! You've already visited.");
+            }
             modal.style.display = 'block';
         }
 
