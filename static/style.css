@@ -76,13 +76,16 @@ nav a::before,
 .button,
 a,
 #topMenu,
+#topMenu ul,
 #topMenu ul li,
 #topMenu ul li a,
 .arrowWrapper,
 .articleSlideContent,
 .articleSlideContent p,
 .articleSlideWrapper img,
-.sliderArrow {
+.sliderArrow,
+.hamburger,
+.hamburger span {
     transition: 300ms;
 }
 
@@ -205,10 +208,6 @@ a,
 
 .act #topMenu a::before {
     background-image: url(svg/listekZielony.svg);
-}
-
-.randomPlot{
-    height: 50%;
 }
 
 .heroImage {
@@ -718,6 +717,265 @@ footer {
     color: var(--color-grey);
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 15px 20px 15px 0;
+    opacity: 1;
+}
+
+.hamburger:hover {
+    opacity: .6;
+}
+
+.hamburger span {
+    background-color: #fff;
+    border-radius: 2px;
+    display: block;
+    height: 4px;
+    margin: 5px 0;
+    width: 40px;
+}
+
+.act .hamburger span,
+.columnOn .hamburger span {
+    background-color: var(--background-color);
+}
+
+.columnOn .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.columnOn .hamburger span:nth-child(2) {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0;
+}
+
+.columnOn .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -10px);
+}
+
+.minigame {
+    width: 100%;
+}
+
+.dropzone {
+    width: 200px;
+    height: 200px;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #333;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+}
+
+.dropzone[value="0"] {
+    background-color: #a3e0a3;
+}
+
+.dropzone[value="1"] {
+    background-color: #e0a3a3;
+}
+
+.dropzone[value="2"] {
+    background-color: #a3c2e0;
+}
+
+.dropzone[value="3"] {
+    background-color: #e0c2a3;
+}
+
+.dropzone[value="4"] {
+    background-color: #606060;
+}
+
+.dropzone-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.draggable-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.draggable {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+    border-radius: 5px;
+    cursor: grab;
+    position: relative;
+    text-align: center;
+}
+
+.draggable:active, .draggable.grabbing {
+    cursor: grabbing;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+}
+
+.draggable.locked {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.draggable[value="0"] {
+    background-color: #4CAF50;
+}
+
+.draggable[value="1"] {
+    background-color: #FF5722;
+}
+
+.draggable[value="2"] {
+    background-color: #2196F3;
+}
+
+.draggable[value="3"] {
+    background-color: #FFC107;
+}
+
+.draggable[value="5"] {
+    background-color: #4d4d4d;
+}
+
+.draggable.locked {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+#confirmButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#confirmButton:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+#gameResult {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+}
+
+.dataTable {
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.dataTable th {
+    background-color: #007bff;
+    color: white;
+}
+.dataTable td {
+    background-color: #ffffff;
+    color: #343a40;
+}
+.dataTable td, .dataTable th {
+    padding: 12px 15px;
+    text-align: center;
+}
+.dataTable thead {
+    background-color: #007bff;
+}
+
+.chart-container {
+    height: 800px; 
+    width: 75%;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-content button:hover {
+    background-color: #218838;
+}
+
 @media (max-width: 1280px) {
 
     .heroInfo {
@@ -748,6 +1006,10 @@ footer {
         flex-direction: column;
     }
 
+    .footerSection {
+        text-align: center;
+    }
+
     article .sectionRow {
         width: 100%;
     }
@@ -770,12 +1032,50 @@ footer {
     }
 
     .separatorWrapper p {
-        margin: 0 20px;
+        margin: 0 10px;
     }
 
     .heroContent {
         width: auto;
         text-align: center;
+    }
+
+    .columnOn#topMenu {
+        height: 100%;
+    }
+
+    #topMenu ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        justify-content: flex-start;
+        padding-top: 140px;
+        align-items: center;
+        gap: 50px;
+        opacity: 0;
+        background-color: var(--color-grey);
+    }
+
+    #topMenu ul li a {
+        color: var(--background-color);
+    }
+
+    #topMenu a::before {
+        background-image: url(svg/listekZielony.svg);
+    }
+
+
+    .columnOn#topMenu ul {
+        display: flex;
+        opacity: 1;
+    }
+
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 
 }
