@@ -115,9 +115,9 @@
             //modalMessage.innerHTML = `You answered <strong>${result.correct}</strong> out of <strong>${result.total}</strong> questions correctly!`;
             if (!localStorage.getItem('firstVisit')) {
                 localStorage.setItem('firstVisit', 'true');
-                alert("Welcome! This is your first visit.");
+                modalMessage.innerHTML = "Welcome! This is your first visit.";
             } else {
-                alert("Welcome back! You've already visited.");
+                modalMessage.innerHTML = "Welcome back! You've already visited.";
             }
             modal.style.display = 'block';
         }
