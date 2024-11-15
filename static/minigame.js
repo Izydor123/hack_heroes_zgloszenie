@@ -4,6 +4,7 @@ const dropZones = [
     document.getElementById("dropZone3"),
     document.getElementById("dropZone4")
 ];
+
 const draggableItems = [
     document.getElementById("draggableItem1"),
     document.getElementById("draggableItem2"),
@@ -142,19 +143,28 @@ function resetDraggableItem(item, zone){
 
 function confirmChoice(){
     const allCorrect = correctPlacements.every(Boolean);
-    const gameResult = document.getElementById("gameResult");
 
+    const modal = document.getElementById('result-modal');
+    const modalMessage = document.getElementById('modal-message');
+
+    modal.style.display = 'block';
     if (allCorrect){
-        gameResult.innerHTML = "Gratulacje! Wszystkie śmieci znajdują się tam gdzie powinny!";
+        modalMessage.innerHTML = "Gratulacje! Wszystkie śmieci znajdują się tam gdzie powinny!";
         if (!localStorage.getItem('firstVisit')) {
             localStorage.setItem('firstVisit', 'true');
-            gameResult.innerHTML = gameResult.innerHTML + "<br>Za to, że podczas swoje pierwszej wizyty zdobyłeś maksymalną liczbę punktów, podwójne gratulacje!";
+            modalMessage.innerHTML = modalMessage.innerHTML + "<br>Z okazji tego że rozwiązałeś zagadkę pierwszy raz dostajesz bon na o wartości 10zł do wydania w dowolnym pociągu PKP Intercity!<br>Bon:xxxx-xxxx-xxxx";
         }
     } 
     else{
         gameResult.textContent = "Niestety, niektóre śmieci nie zostały włożone do odpowiednich pojemników.";
         resetDraggableItems();
     }
+}
+
+
+function closeModal() {
+    const modal = document.getElementById('result-modal');
+    modal.style.display = 'none';
 }
 
 function resetDraggableItems(){

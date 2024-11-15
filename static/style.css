@@ -67,6 +67,15 @@ a {
     width: 100%;
 }
 
+.sectionColumn article {
+    flex-direction: column;
+}
+
+.sectionColumn article .sectionRow {
+    width: 100%;
+    padding: 0;
+}
+
 .mainRow {
     flex-direction: column;
     gap: 50px;
@@ -85,7 +94,9 @@ a,
 .articleSlideWrapper img,
 .sliderArrow,
 .hamburger,
-.hamburger span {
+.hamburger span,
+.newsletterButton,
+.newsletterButton::before {
     transition: 300ms;
 }
 
@@ -175,7 +186,6 @@ a,
     background-image: url(svg/listek.svg);
     background-repeat: repeat;
     background-size: contain;
-    font-family: "hsfont";
     position: absolute;
     bottom: -20px;
     width: 58px;
@@ -255,8 +265,8 @@ a,
     align-items: center;
     text-align: center;
     flex-direction: column;
-    width: 360px;
-    padding: 35px 70px;
+    width: 340px;
+    padding: 35px 60px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom: 5px solid var(--background-color);
@@ -352,7 +362,8 @@ article {
 
 .headingText,
 .headingTextChart,
-.headingTextSeparator {
+.headingTextSeparator,
+.headingTextNewsletter {
     display: flex;
     font-size: var(--big-font-size);
     color: var(--background-color);
@@ -504,7 +515,8 @@ article .articleSlideWrapper:hover .picture.articleSlide img {
 
 .chartList,
 .separatorImage,
-.separatorVideo {
+.separatorVideo,
+.newsletterSection {
     padding-top: var(--spacing);
 }
 
@@ -658,16 +670,30 @@ tr {
     width: 100%;
 }
 
-.teamWrapper {
+.allArticlesWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    padding-top: var(--spacing);
 }
 
-.kadraPicture {
-    height: 70% !important;
-    width: 70% !important;
+.allArticlesWrapper .articleSlide {
+    height: 256px;
+}
+
+.allArticlesWrapper .articleSlideWrapper {
+    width: 30%;
+    padding: 12px 12px var(--spacing) 12px;
+}
+
+.allArticlesWrapper .articleSlide img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.allArticlesWrapper .articleSlideWrapper:hover .picture.articleSlide img {
+    transform: scale(1.05);
 }
 
 .sectionForm,
@@ -687,6 +713,64 @@ tr {
     display: flex;
     justify-content: end;
     gap: 30px;
+}
+
+.newsletterWrapper {
+    flex-direction: column;
+}
+
+.newsletterSection {
+    text-align: center;
+}
+
+.newsletterForm {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.newsletterInput {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-bottom: solid 3px var(--background-color);
+    outline: none;
+    max-width: 400px;
+}
+
+.newsletterInput:focus {
+    border: none;
+    border-bottom: solid 3px var(--background-color);
+}
+
+.newsletterButton {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+    border: none;
+    background-color: transparent;
+    color: transparent;
+    cursor: pointer;
+}
+
+.newsletterButton::before {
+    content: '';
+    background-image: url(svg/strzalkaNewsletter.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 1;
+}
+
+.newsletterButton:hover:before {
+    opacity: 0.6;
 }
 
 footer {
@@ -767,18 +851,17 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px dashed #333;
     border-radius: 10px;
     margin: 20px;
     text-align: center;
 }
 
 .dropzone[value="0"] {
-    background-color: #a3e0a3;
+    background-color: #84de9f;
 }
 
 .dropzone[value="1"] {
-    background-color: #e0a3a3;
+    background-color: #6d5519;
 }
 
 .dropzone[value="2"] {
@@ -786,11 +869,7 @@ footer {
 }
 
 .dropzone[value="3"] {
-    background-color: #e0c2a3;
-}
-
-.dropzone[value="4"] {
-    background-color: #606060;
+    background-color: #d8de41;
 }
 
 .dropzone-container{
@@ -851,25 +930,56 @@ footer {
     opacity: 0.5;
 }
 
-.draggable[value="0"] {
-    background-color: #4CAF50;
+#draggableItem1 {
+    background-image: url(img/szklo1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.draggable[value="1"] {
-    background-color: #FF5722;
+#draggableItem2 {
+    background-image: url(img/bio1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.draggable[value="2"] {
-    background-color: #2196F3;
+#draggableItem3 {
+    background-image: url(img/paipier1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.draggable[value="3"] {
-    background-color: #FFC107;
+#draggableItem4 {
+    background-image: url(img/plastik1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.draggable[value="5"] {
-    background-color: #4d4d4d;
+#draggableItem5 {
+    background-image: url(img/plastik2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
+
+#draggableItem6 {
+    background-image: url(img/bio2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+#draggableItem7 {
+    background-image: url(img/szklo2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+#draggableItem8 {
+    background-image: url(img/paipier2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 
 .draggable.locked {
     cursor: not-allowed;
@@ -900,41 +1010,6 @@ footer {
     font-size: 18px;
     font-weight: bold;
     color: #333;
-    margin-top: 15px;
-}
-
-.dataTable {
-    margin-top: 30px;
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.dataTable th {
-    background-color: #007bff;
-    color: white;
-}
-.dataTable td {
-    background-color: #ffffff;
-    color: #343a40;
-}
-.dataTable td, .dataTable th {
-    padding: 12px 15px;
-    text-align: center;
-}
-.dataTable thead {
-    background-color: #007bff;
-}
-
-.chart-container {
-    height: 800px; 
-    width: 75%;
-    max-width: 1400px;
-    margin: 40px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    border-radius: 8px;
 }
 
 .modal {
@@ -943,7 +1018,7 @@ footer {
     z-index: 1000;
     left: 0;
     top: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
