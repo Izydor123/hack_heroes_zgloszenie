@@ -64,10 +64,6 @@ def index():
 def artykuly():
     return render_template('artykuly.html')
 
-@app.route('/autorzy')
-def autorzy():
-    return render_template('autorzy.html')
-
 @app.route('/kadra')
 def kadra():
     return render_template('kadra.html')
@@ -99,9 +95,9 @@ def zagrozenia():
 def submit():
     correct = 0
     total = len(questions)
-
     for question in questions:
-        user_answer = request.form.get(f"question-{question['index']}")
+        question_index = question["index"]
+        user_answer = request.form.get(question_index)
         if user_answer == question["answer"]:
             correct += 1
 
