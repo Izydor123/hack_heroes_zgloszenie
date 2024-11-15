@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odpadki Info</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='WOW/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='slick/slick.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='slick/slick-theme.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <script src="{{ url_for('static', filename='jQuerry/jQuerry.js') }}"></script>
+    <script src="{{ url_for('static', filename='slick/slick.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='WOW/wow.min.js') }}"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+</head>
+
+<body class="homePage">
+
+    <nav id="topMenu" class="flexOnCenter">
+        <section class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </section>
+        <ul class="siteWidth">
+            <li class="active"><a href="{{ url_for('index') }}">Strona główna</a></li>
+            <li><a href="{{ url_for('dane') }}">Dane</a></li>
+            <li><a href="{{ url_for('segregacja') }}">Segregacja</a></li>
+            <li><a href="{{ url_for('artykuly') }}">Artykuły</a></li>
+            <li><a href="{{ url_for('minigra') }}">Minigra</a></li>
+        </ul>
+    </nav>
+
+    <header class="heroImage">
+        <img src="{{ url_for('static', filename='img/e1.jpg') }}" alt="natura">
+
+        <section class="heroContent">
+            <section class="heorContentWrapper wow fadeInDown" data-wow-duration="1.5s">
+                <h1 class="heroTitle">Nie ma planety B</h1>
+                <h2 class="heroSubtitle">I nigdy nie będzie</h2>
+            </section>
+        </section>
+
+        <aside class="heroInfo">
+            <section class=" heroInfoContent wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="heroSubtitle">Dowiedz się więcej o swoim domu</h2>
+                <p>Wystarczy podjąć małe działania, aby zapewnić sobie i innym lepsze miejsce do życia. Dzięki tej
+                    witrynie dowiesz się jak zacząć i dlaczego jest to takie ważne!
+                </p>
+                <a class="button buttonCurrent"><span>Czytaj więcej</span></a>
+            </section>
+        </aside>
+
+        <section class="heroFooter">
+            <section class="arrowWrapper">
+                <img src="{{ url_for('static', filename='svg/strzalkaDol.svg') }}">
+            </section>
+        </section>
+
+    </header>
+
+
+    <section class="classicSection sectionColumn siteWidth">
+        <article>
+            <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Brak Segregacji</h2>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s">
+                <p>
+                    Problem nadmiernej produkcji odpadów i ich niewłaściwego zagospodarowania jest jednym z największych
+                    wyzwań współczesnego świata. Składowiska śmieci rosną w zastraszającym tempie, wypełniając się
+                    odpadami, które nie zawsze są właściwie segregowane. Zanieczyszczenie gleby, wody i powietrza ma
+                    negatywny wpływ na zdrowie ludzi, zwierząt i roślin. Segregacja odpadów nie tylko zmniejsza ilość
+                    śmieci trafiających na składowiska, ale również umożliwia odzyskiwanie cennych surowców, które mogą
+                    być ponownie wykorzystane, oszczędzając zasoby naturalne i redukując emisję gazów cieplarnianych.
+                    <br><br>
+                    Brak segregacji odpadów prowadzi do poważnych konsekwencji ekologicznych, takich jak
+                    zanieczyszczenie oceanów plastikowymi śmieciami, które stanowią zagrożenie dla życia morskiego.
+                    Dzikie wysypiska mogą być źródłem toksycznych substancji. Segregowanie śmieci jest kluczowe, aby
+                    minimalizować negatywny wpływ na środowisko. Odpowiednia segregacja to proste działanie, które każdy
+                    z nas może wdrożyć, mając ogromne znaczenie dla przyszłości naszej planety. W niniejszym artykule
+                    przyjrzymy się bliżej temu, dlaczego segregowanie śmieci jest tak istotne, jakie konsekwencje niesie
+                    brak segregacji i jak możemy włączyć się w ten proekologiczny proces na co dzień.
+                </p>
+        </article>
+    </section>
+
+    <section class="classicSection siteWidth currentPosition wow fadeIn" data-wow-duration="1s">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Zagrożenia</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s">
+                    Brak segregowania śmieci niesie ze sobą poważne zagrożenia dla środowiska i zdrowia publicznego.
+                    Zanieczyszczenie środowiska może nastąpić, gdy odpady nie są prawidłowo segregowane i trafiają do
+                    ekosystemów, zanieczyszczając gleby oraz wody gruntowe i powierzchniowe. Proces ten prowadzi do
+                    uszkodzenia siedlisk i śmierci organizmów żyjących w tych środowiskach.
+                    <br><br>
+                    Ponadto, odpady organiczne, które trafiają na składowiska zamiast do kompostowni, emitują metan,
+                    silny gaz cieplarniany, który przyczynia się do zmian klimatycznych i globalnego ocieplenia. Metan
+                    jest znacznie bardziej efektywny w zatrzymywaniu ciepła w atmosferze niż dwutlenek węgla, co czyni
+                    go szczególnie szkodliwym dla klimatu. Zapobieganie emisji tego gazu poprzez prawidłowe zarządzanie
+                    odpadami organicznymi jest kluczowym elementem walki ze zmianami klimatycznymi.
+                </p>
+            </section>
+            <section class=" sectionRow picture wow fadeInUp" data-wow-duration="1.5s">
+                <img src="{{ url_for('static', filename='img/m3.jpg') }}" alt="obraz">
+            </section>
+        </article>
+    </section>
+
+    <section class="classicSection siteWidth reverse wow fadeIn" data-wow-duration="1s">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Życie morskie</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s">
+                    Dodatkowo, odpady plastikowe trafiające do oceanów stanowią ogromne zagrożenie dla życia morskiego,
+                    gdyż zwierzęta mylą plastik z pożywieniem, co prowadzi do ich śmierci. Plastikowe odpady mogą
+                    również rozkładać się na mikroskopijne cząstki, które przedostają się do łańcucha pokarmowego,
+                    zagrażając zdrowiu ludzi.
+                    <br><br>
+
+                    Segregacja śmieci jest więc kluczowym elementem ochrony naszego środowiska i zdrowia publicznego.
+                    Dzięki niej możemy znacząco zmniejszyć negatywne skutki wynikające z braku odpowiedniego zarządzania
+                    odpadami.
+                </p>
+            </section>
+            <section class="sectionRow picture flexOnCenter wow fadeInUp" data-wow-duration="1.5s">
+                <img src="{{ url_for('static', filename='img/m4.jpg') }}" alt="obraz">
+            </section>
+        </article>
+    </section>
+
+
+    <section class="separatorVideo">
+        <section class="separatorWrapper flexOnCenter wow fadeInUp" data-wow-duration="1.5s">
+            <video autoplay muted loop>
+                <source src="{{ url_for('static', filename='img/v3.mp4') }}" type="video/mp4">
+                Przeglądarka nie obsługuje wideo HTML5.
+            </video>
+            <section class="separatorContent siteWidth wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="headingTextSeparator">Odkryj wszystkie artykuły!</h2>
+                <p>
+                    Nasza witryna to kompendium wiedzy o ekologii, które pomoże Ci zrozumieć, jakie
+                    zagrożenia wiążą się ze śmiecenieniem i brakiem recyklingu. Znajdziesz tu mnóstwo fascynujących
+                    artykułów, które poszerzą Twoją wiedzę i zainspirują do działania. Poznaj alarmujące dane dotyczące
+                    produkcji śmieci i zobacz, jak Twoje codzienne wybory mogą wpływać na naszą planetę. Dowiedz się,
+                    jak prawidłowo segregować śmieci dzięki naszym poradnikom i interaktywnym narzędziom, które ułatwią
+                    naukę i wdrożenie dobrych praktyk.
+                    <br><br>
+                    Dołącz do naszej społeczności dbającej o planetę i odkryj, jak wiele możemy osiągnąć razem. Każdy
+                    przeczytany artykuł to krok w stronę lepszej przyszłości.
+                </p>
+                <a href="{{ url_for('artykuly') }}" class="button buttonLight"><span>Czytaj więcej</span></a>
+            </section>
+        </section>
+    </section>
+
+
+    <section class="newsletterSection">
+        <section class="newsletterWrapper siteWidth">
+            <section class="newsletterContent">
+                <h2 class="headingTextNewsletter flexOnCenter">Newsletter</h2>
+
+            </section>
+            <form class="newsletterForm">
+                <input class="newsletterInput" type="email" placeholder="Adres e-mail" required>
+                <button type="submit" class="newsletterButton"></button>
+            </form>
+            <p>Bądź na bieżąco z nowościami i artykułami!</p>
+        </section>
+    </section>
+
+
+    <footer>
+        <section class="footerWrapper">
+            <section class="footerSection siteWidth">
+                <p class="alignFirst">© 2024 odpadkiinfo.onrender.com Wszelkie prawa zastrzeżone</p>
+                <p>Autorzy witryny: Bartosz Wryszcz i Jakub Kubieniec</p>
+            </section>
+        </section>
+    </footer>
+
+    <script>
+
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                $('body').toggleClass('act', $(this).scrollTop() > 40);
+            });
+
+            $('.arrowWrapper').click(function () {
+                $('html, body').animate({
+                    scrollTop: $(window).scrollTop() + 600
+                }, 1000);
+            });
+
+            $('.buttonCurrent').click(function () {
+                $('html, body').animate({
+                    scrollTop: $('.currentPosition').offset().top
+                }, 1000);
+            });
+
+            $('.hamburger').click(function () {
+                $('#topMenu').toggleClass('columnOn');
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odpadki Info</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='WOW/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='slick/slick.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='slick/slick-theme.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <script src="{{ url_for('static', filename='jQuerry/jQuerry.js') }}"></script>
+    <script src="{{ url_for('static', filename='slick/slick.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='WOW/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='quiz.js') }}"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+</head>
+
+<body class="homePage">
+
+    <nav id="topMenu" class="flexOnCenter">
+        <section class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </section>
+        <ul class="siteWidth">
+            <li><a href="{{ url_for('index') }}">Strona główna</a></li>
+            <li><a href="{{ url_for('dane') }}">Dane</a></li>
+            <li class="active"><a href="{{ url_for('segregacja') }}">Segregacja</a></li>
+            <li><a href="{{ url_for('artykuly') }}">Artykuły</a></li>
+            <li><a href="{{ url_for('minigra') }}">Minigra</a></li>
+        </ul>
+    </nav>
+
+    <header class="heroImage">
+        <img src="{{ url_for('static', filename='img/e11.jpg') }}" alt="natura">
+
+        <section class="heroContent">
+            <section class="heorContentWrapper wow fadeInDown" data-wow-duration="1.5s">
+                <h1 class="heroTitle">Nie ma planety B</h1>
+                <h2 class="heroSubtitle">I nigdy nie będzie</h2>
+            </section>
+        </section>
+
+        <aside class="heroInfo">
+            <section class=" heroInfoContent wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="heroSubtitle">Dowiedz się więcej o swoim domu</h2>
+                <p>Wystarczy podjąć małe działania, aby zapewnić sobie i innym lepsze miejsce do życia. Dzięki tej
+                    witrynie dowiesz się jak zacząć i dlaczego jest to takie ważne!
+                </p>
+                <a class="button buttonCurrent"><span>Czytaj więcej</span></a>
+            </section>
+        </aside>
+
+        <section class="heroFooter">
+            <section class="arrowWrapper">
+                <img src="{{ url_for('static', filename='svg/strzalkaDol.svg') }}">
+            </section>
+        </section>
+
+    </header>
+    <section class="classicSection siteWidth currentPosition wow fadeIn currentPosition" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeIn;">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">Plastik i Metal</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                    •	<b>Co zalicza się do tej kategorii?</b><br>
+                    o	Butelki i opakowania plastikowe, np. po napojach, środkach czystości<br>
+                    o	Torebki foliowe, folia aluminiowa<br>
+                    o	Puszki po napojach, konserwach<br>
+                    o	Kartony po mleku i sokach (typu Tetra Pak)<br>
+                    •	<b>Gdzie wyrzucać?</b><br>
+                    o	Pojemnik <b>żółty</b><br>
+                    •   Pamiętaj, aby przed wyrzuceniem odpadów zgnieść butelki plastikowe, co pozwoli na zaoszczędzenie miejsca
+                </p>
+            </section>
+
+            <section class="sectionRow picture wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <img src="{{ url_for('static', filename='img/plastic.jpg') }}" alt="plastik">
+            </section>
+        </article>
+    </section> 
+
+    <section class="classicSection siteWidth reverse currentPosition wow fadeIn currentPosition" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeIn;">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">Papier</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                    •	<b>Co zalicza się do tej kategorii? </b><br>
+                    o	Gazety, czasopisma<br>
+                    o	Pudełka kartonowe, opakowania papierowe<br>
+                    o	Torebki papierowe, zeszyty, papier do pisania<br>
+                    •	<b>Gdzie wyrzucać?</b><br>
+                    o	Pojemnik <b>niebieski</b><br>
+                    •   Brudny papier, np. tłusty karton po pizzy, nie nadaje się do recyklingu i należy go wyrzucić do odpadów zmieszanych.
+                </p>
+            </section>
+
+            <section class="sectionRow picture wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <img src="{{ url_for('static', filename='img/papier.jpg') }}" alt="papier">
+            </section>
+        </article>
+    </section> 
+
+    <section class="classicSection siteWidth currentPosition wow fadeIn currentPosition" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeIn;">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">Szkło</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                    •	<b>Co zalicza się do tej kategorii?</b><br>
+                    o	Butelki szklane po napojach (bez kapsli, nakrętek)<br>
+                    o	Słoiki szklane (bez pokrywek)<br>
+                    o	Opakowania szklane po kosmetykach (o ile są czyste) <br>               
+                    •	<b>Gdzie wyrzucać?</b><br>
+                    o	Pojemnik <b>zielony</b><br>
+                    •   W niektórych miejscach dostępne są oddzielne pojemniki na szkło kolorowe (zielony) i bezbarwne (biały). Nigdy nie wrzucaj tu ceramiki, szkła stołowego (np. szklanek), luster ani szyb.
+                </p>
+            </section>
+
+            <section class="sectionRow picture wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <img src="{{ url_for('static', filename='img/szklo.jpg') }}" alt="szklo">
+            </section>
+        </article>
+    </section> 
+
+    <section class="classicSection siteWidth reverse currentPosition wow fadeIn currentPosition" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeIn;">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">Odpady organiczne</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                    •	<b>Co zalicza się do tej kategorii? </b><br>
+                    o	Resztki warzyw i owoców<br>
+                    o	Fusy po kawie, herbacie<br>
+                    o	Skorupki jajek, obierki, trawa, liście, drobne gałęzie<br>                
+                    •	<b>Gdzie wyrzucać?</b><br>
+                    o	Pojemnik <b>brązowy</b><br>
+                    •   Należy unikać wrzucania mięsa, kości oraz odpadów kuchennych z tłuszczem, które są trudne do kompostowania.
+                </p>
+            </section>
+
+            <section class="sectionRow picture wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <img src="{{ url_for('static', filename='img/bio.jpg') }}" alt="bio">
+            </section>
+        </article>
+    </section> 
+
+    <section class="classicSection siteWidth currentPosition wow fadeIn" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeIn;">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">Odpady zmieszane</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                    •	<b>Co zalicza się do tej kategorii?</b><br>
+                    o	Odpady, których nie można segregować, np. zużyte pieluchy<br>
+                    o	Silnie zabrudzone opakowania, np. tłusty papier, zanieczyszczone folie<br>
+                    o	Porcelana, ceramika, szkło żaroodporne<br>
+                    •	<b>Gdzie wyrzucać?</b><br>
+                    o	Pojemnik <b>czarny</b><br>
+                    •   Wyrzucamy tu wszystko, co nie podlega recyklingowi i nie nadaje się do kompostowania.
+                </p>
+            </section>
+
+            <section class="sectionRow picture wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <img src="{{ url_for('static', filename='img/mieszane.jpg') }}" alt="kadra">
+            </section>
+        </article>
+    </section> 
+
+    <section class="separatorImage">
+        <section class="separatorWrapper flexOnCenter wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+            <section class="separatorContent siteWidth wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <h2 class="headingTextSeparator wow fadeInU">Quiz</h2>
+                <p  class="wow fadeInUp">
+                    Sprawdź teraz swoją wiedzę w prostym quizie.
+                </p>
+                <form action="/submit" method="post" onsubmit="submitQuiz(event)">
+                    {% for question in questions %}
+                        <fieldset>
+                            <legend>{{ question.question }}</legend>
+                            {% for option in question.options %}
+                                <label>
+                                    <input type="radio" name="{{ question.index }}" value="{{ option }}" required>
+                                    {{ option }}
+                                </label>
+                            {% endfor %}
+                        </fieldset>
+                    {% endfor %}
+                    <button type="submit" class="button buttonCurrent">Sprawdź</button>
+                    <p id="gameResult" class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"></p>
+                </form>
+
+                </form>
+            </section>
+        </section>
+    </section>
+
+
+  
+    <!-- <section class="classicSection siteWidth currentPosition wow fadeIn" data-wow-duration="1s">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Witaj!</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s">
+                    Czy wiesz, że nasza planeta cierpi z powodu nadmiaru odpadów? Witryna <span
+                        class="stressText"><b>odpadkiinfo.onrender.com</b></span> to miejsce, gdzie dowiesz się,
+                    jakie zagrożenia niosą za sobą śmiecenie i brak recyklingu. Nasz portal pomoże Ci zrozumieć, jak
+                    segregować odpady, aby chronić środowisko.
+                    <br><br>
+
+                    Poznaj alarmujące dane dotyczące produkcji śmieci i zobacz, jak Twoje działania mogą mieć pozytywny
+                    wpływ na naszą planetę. Dodatkowo, nasza interaktywna gra sprawi, że nauka o sortowaniu odpadów
+                    stanie się przyjemnością!
+                    <br><br>
+                    Przyłącz się do nas i odkryj, jak małe kroki mogą prowadzić do wielkich zmian. Zadbajmy razem o
+                    lepszą przyszłość!
+                </p>
+            </section>
+
+            <section class=" sectionRow picture wow fadeInUp" data-wow-duration="1.5s">
+                <img src="img/e2.jpg" alt="kadra">
+            </section>
+        </article>
+    </section> -->
+
+
+    <!-- <section class="classicSection siteWidth reverse wow fadeIn" data-wow-duration="1s">
+        <article>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Segregowanie</h2>
+                <p class="wow fadeInUp" data-wow-duration="1.5s">
+                    Segregowanie śmieci jest kluczowe, ponieważ chroni zasoby naturalne, zmniejsza ilość odpadów na
+                    składowiskach, redukuje emisję gazów cieplarnianych, chroni ekosystemy i zwierzęta, przynosi
+                    oszczędności finansowe oraz zwiększa naszą świadomość ekologiczną. Każdy krok w segregacji odpadów
+                    przyczynia się do ochrony naszej planety i budowania lepszej przyszłości.
+                </p>
+
+                <a href="segregacja.html" class="button wow fadeInUp" data-wow-duration="1.5s"><span>Czytaj
+                        więcej</span></a>
+            </section>
+            <section class="sectionRow picture flexOnCenter wow fadeInUp" data-wow-duration="1.5s">
+                <img src="img/e8.jpg" alt="uśmiech">
+            </section>
+        </article>
+    </section> -->
+
+    <!-- Obraz sekcja -->
+    <!-- <section class="separatorImage">
+        <section class="separatorWrapper flexOnCenter wow fadeInUp" data-wow-duration="1.5s">
+            <img src="img/e18.jpg">
+            <section class="separatorContent siteWidth wow fadeInUp" data-wow-duration="1.5s">
+                <h2 class="headingTextSeparator">Zobacz pozostałe artykuły!</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie egestas posuere.
+                    Pellentesque elementum nulla sed purus tincidunt elementum. Etiam fringilla convallis nulla, non
+                    aliquet augue dictum a. Vivamus suscipit enim feugiat orci viverra rutrum. Pellentesque sed cursus
+                    metus, quis finibus dolor.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie egestas posuere.
+                    Pellentesque elementum nulla sed purus tincidunt elementum. Etiam fringilla convallis nulla, non
+                    aliquet augue dictum a. Vivamus suscipit enim feugiat orci viverra rutrum. Pellentesque sed cursus
+                    metus, quis finibus dolor.
+                </p>
+
+                <a href=" dane.html" class="button buttonLight"><span>Zobacz
+                        więcej</span></a>
+            </section>
+        </section>
+    </section> -->
+
+
+
+    <section class="separatorVideo">
+        <section class="separatorWrapper flexOnCenter wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+            <video autoplay="" muted="" loop="">
+                <source src="{{ url_for('static', filename='img/v2.mp4') }}" type="video/mp4">
+                Przeglądarka nie obsługuje wideo HTML5.
+            </video>
+            <section class="separatorContent siteWidth wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <h2 class="headingTextSeparator">Odkryj wszystkie artykuły!</h2>
+                <p>
+                    Nasza witryna to kompendium wiedzy o ekologii, które pomoże Ci zrozumieć, jakie
+                    zagrożenia wiążą się ze śmiecenieniem i brakiem recyklingu. Znajdziesz tu mnóstwo fascynujących
+                    artykułów, które poszerzą Twoją wiedzę i zainspirują do działania. Poznaj alarmujące dane dotyczące
+                    produkcji śmieci i zobacz, jak Twoje codzienne wybory mogą wpływać na naszą planetę. Dowiedz się,
+                    jak prawidłowo segregować śmieci dzięki naszym poradnikom i interaktywnym narzędziom, które ułatwią
+                    naukę i wdrożenie dobrych praktyk.
+                    <br><br>
+                    Dołącz do naszej społeczności dbającej o planetę i odkryj, jak wiele możemy osiągnąć razem. Każdy
+                    przeczytany artykuł to krok w stronę lepszej przyszłości.
+                </p>
+                <a href="{{ url_for('artykuly') }}" class="button buttonLight"><span>Czytaj więcej</span></a>
+            </section>
+        </section>
+    </section>
+
+    <footer>
+        <section class="footerWrapper">
+            <section class="footerSection siteWidth">
+                <p class="alignFirst">© 2024 odpadkiinfo.onrender.com Wszelkie prawa zastrzeżone</p>
+                <p>Autorzy witryny: Bartosz Wryszcz i Jakub Kubieniec</p>
+            </section>
+        </section>
+    </footer>
+
+    <script>
+
+         $(document).ready(function () {
+            $(window).scroll(function () {
+                $('body').toggleClass('act', $(this).scrollTop() > 40);
+            });
+
+            $('.arrowWrapper').click(function () {
+                $('html, body').animate({
+                    scrollTop: $(window).scrollTop() + 600
+                }, 1000);
+            });
+
+            $('.buttonCurrent').click(function () {
+                $('html, body').animate({
+                    scrollTop: $('.currentPosition').offset().top
+                }, 1000);
+            });
+
+            $('.hamburger').click(function () {
+                $('#topMenu').toggleClass('columnOn');
+            });
+
+            $('.articleSlider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 3000,
+                centerMode: true,
+                centerPadding: '60px',
+                dots: true,
+                prevArrow: "<section class='sliderArrow prevArrow'><img src='/static/svg/strzalkaLewo.svg'></section>",
+                nextArrow: "<section class='sliderArrow nextArrow'><img src='/static/svg/strzalkaPrawo.svg'></section>",
+                arrows: true,
+                responsive: [
+                    {
+                        breakpoint: 1280,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            centerMode: false
+                        }
+                    },
+                    {
+                        breakpoint: 980,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 2,
+                            centerPadding: '0',
+                            centerMode: true
+                        }
+                    }
+                ]
+            });
+
+        });
+
+    </script>
+
+
+
+</body></html>
