@@ -25,11 +25,10 @@ def PLWasteCharts(route) -> list:
 
    
     fig1.update_layout(
-        width=1400, 
-        height=1200,
+        width=550,
+        height=350,
         xaxis_title="",
-        yaxis_title="tys. ton",
-        yaxis=dict(tickformat=",.0f"),
+        yaxis_title="",
         annotations=[
         dict(
             text="Źródło danych: Baza danych lokalnych GUS",
@@ -37,39 +36,38 @@ def PLWasteCharts(route) -> list:
             x=0, y=-0.2, showarrow=False,
             font=dict(size=10, color="black"))],
         legend=dict(
-            x=1,  
-            y=1,  
-            xanchor='left',  
-            yanchor='top',   
-            font=dict(
-                family="Arial", 
-                size=14,        
-                color="blue"     
-            ),
-            bgcolor="rgba(255, 255, 255, 0.7)", 
-            borderwidth=2, 
-            itemwidth=30, 
-            traceorder="normal" 
-        )
+            title="Legenda", 
+            x=1.0,                  
+            y=1.0,
+            bgcolor='rgba(255, 255, 255, 0.7)',
+            bordercolor='black',
+            borderwidth=1,
+            font=dict(size=8)
+        ),
+        dragmode=False,
+        hovermode=None, 
     )
+
     fig1 = pio.to_html(fig1, full_html=False, config=config)
+
+    
 
     fig2 = px.line(ogolne.groupby('Rok')['Masa wytworzonych odpadów(w tonach)'].sum().reset_index(), x='Rok', y='Masa wytworzonych odpadów(w tonach)')
     fig2.update_layout(
-        width=1400, 
-        height=1200,
+        width=550,
+        height=350,
         xaxis_title="",
-        yaxis_title="tys. ton",
-        yaxis=dict(tickformat=",.0f"),
+        yaxis_title="",
         annotations=[
         dict(
-            text="",
+            text="Źródło danych: Baza danych lokalnych GUS",
             xref="paper", yref="paper",
             x=0, y=-0.2, showarrow=False,
-            font=dict(size=10, color="black"))]
+            font=dict(size=10, color="black"))],
+        dragmode=False,
+        hovermode=None, 
+        showlegend=False
     )
     fig2 = pio.to_html(fig2, full_html=False, config=config)
-
-   
 
     return [fig1, fig2]

@@ -47,7 +47,7 @@ def import_data() -> pd.DataFrame:
 
         print(f"An error occurred while importing data: {e}")
 
-def data_chart(dataset):
+def data_chart(dataset) -> str:
     fig = go.Figure(
         data=[
             go.Bar(
@@ -60,11 +60,16 @@ def data_chart(dataset):
     )
     
     fig.update_layout(
-        xaxis_title='Region',
-        yaxis_title='Suma odpadów wyprodukowana w 2022',
-        template="plotly_white",
-        width=1400, 
-        height=1200,
+        width=550,
+        height=350,
+        xaxis_title="",
+        yaxis_title="",
+        annotations=[
+        dict(
+            text="Źródło danych: Baza danych serwisu Eurostat",
+            xref="paper", yref="paper",
+            x=0, y=-0.9, showarrow=False,
+            font=dict(size=10, color="black"))],
         dragmode=False,
         hovermode=None, 
         showlegend=False
@@ -79,7 +84,7 @@ def data_chart(dataset):
     }
 
     chart_html = pio.to_html(fig, full_html=False, config=config)
-    
+
     return chart_html
 
     

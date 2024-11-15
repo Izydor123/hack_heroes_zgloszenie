@@ -36,24 +36,23 @@ pl_communal_waste = PLWasteCharts('odpady_komunalne.csv')
 questions = [
     {
         "index": "1",
-        "question": "What is the capital of France?",
-        "options": ["Paris", "Berlin", "Madrid", "Rome"],
-        "answer": "Paris"
+        "question": "Do jakiego pojemnika należy wyrzucać ceramikę?",
+        "options": ["Na odpady zmieszane", "Na szkło", "Na papier"],
+        "answer": "Na odpady zmieszane"
     },
     {
         "index": "2",
-        "question": "What is 2 + 2?",
-        "options": ["3", "4", "5", "6"],
-        "answer": "4"
+        "question": "Co można wrzucić do brązowego pojemnika?",
+        "options": ["Kości z rosołu", "Przetłuszczony papier", "Zgniłe owoce"],
+        "answer": "Zgniłe owoce"
     },
     {
         "index": "3",
-        "question": "Which programming language is Flask based on?",
-        "options": ["Python", "Java", "C++", "Ruby"],
-        "answer": "Python"
+        "question": "Czy podczas wyrzucania butelek trzeba je oddzielać od korków?",
+        "options": ["Tak","Nie"],
+        "answer": "Tak"
     }
 ]
-
 
 
 
@@ -79,7 +78,10 @@ def dane():
     global euro_data_plot
     global pl_all_waste
     global pl_communal_waste
-    return render_template('dane.html')
+    return render_template('dane.html',
+                           euro_plot=euro_data_plot,
+                           pl_all_plots = pl_all_waste,
+                           pl_communal_plots  = pl_communal_waste)
 
 @app.route('/minigra')
 def minigra():
@@ -87,15 +89,11 @@ def minigra():
 
 @app.route('/segregacja')
 def segregacja():
-    return render_template('segregacja.html')
+    return render_template('segregacja.html', questions=questions)
 
 @app.route('/zagrozenia')
 def zagrozenia():
     return render_template('zagrozenia.html')
-
-@app.route('/quiz')
-def quiz():
-    return render_template('quiz.html', questions=questions)
 
 @app.route('/submit', methods=['POST'])
 def submit():
@@ -109,6 +107,7 @@ def submit():
 
     return jsonify(correct=correct, total=total)
 
+
 if __name__ == "__main__":
     app.run(debug=True)
 
@@ -119,7 +118,4 @@ def kontakt():
     global pl_all_waste
     global pl_communal_waste
     return render_template('kontakt.html',
-                           euro_data_to_show=euro_fetched_data.to_dict(orient="records"),
-                           euro_plot=euro_data_plot,
-                           pl_all_plots = pl_all_waste,
-                           pl_communal_plots  = pl_communal_waste)"""
+                           """
