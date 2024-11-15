@@ -102,8 +102,8 @@ def submit():
     correct = 0
     total = len(questions)
 
-    for i, question in enumerate(questions):
-        user_answer = request.form.get(f"question-{i}")
+    for question in questions:
+        user_answer = request.form.get(f"question-{question['index']}")
         if user_answer == question["answer"]:
             correct += 1
 
