@@ -1108,6 +1108,10 @@ label {
         flex-direction: column;
     }
 
+    .allArticlesWrapper .articleSlideWrapper {
+        width: 63%;
+    }
+
     .draggable-container{
          height: 200px;   
     }
@@ -1209,6 +1213,10 @@ label {
     .classicSection.reverse article,
     .allArticlesWrapper {
         flex-direction: column;
+    }
+
+    .allArticlesWrapper .articleSlideWrapper {
+        width: 63%;
     }
 
     .draggable-container{
