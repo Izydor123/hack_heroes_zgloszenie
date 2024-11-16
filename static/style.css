@@ -1059,7 +1059,6 @@ label {
     margin-bottom: 5px;
 }
 
-
 .act .hamburger span,
 .columnOn .hamburger span {
     background-color: var(--background-color);
@@ -1105,7 +1104,7 @@ label {
     .footerSection,
     .classicSection article,
     .classicSection.reverse article,
-    .dropzone-container,
+    .dropzone-container
     {
         flex-direction: column;
     }
@@ -1198,7 +1197,7 @@ label {
     .footerSection,
     .classicSection article,
     .classicSection.reverse article,
-    .dropzone-container,
+    .dropzone-container
     {
         flex-direction: column;
     }
