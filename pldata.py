@@ -25,8 +25,8 @@ def PLWasteCharts(route) -> list:
 
    
     fig1.update_layout(
-        width=550,
-        height=350,
+        width=650,
+        height=450,
         xaxis_title="",
         yaxis_title="",
         annotations=[
@@ -54,8 +54,8 @@ def PLWasteCharts(route) -> list:
 
     fig2 = px.line(ogolne.groupby('Rok')['Masa wytworzonych odpadów(w tonach)'].sum().reset_index(), x='Rok', y='Masa wytworzonych odpadów(w tonach)')
     fig2.update_layout(
-        width=550,
-        height=350,
+        width=650,
+        height=450,
         xaxis_title="",
         yaxis_title="",
         annotations=[
