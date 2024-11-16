@@ -670,6 +670,12 @@ tr {
     width: 100%;
 }
 
+.chart{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
 .allArticlesWrapper {
     display: flex;
     align-items: center;
