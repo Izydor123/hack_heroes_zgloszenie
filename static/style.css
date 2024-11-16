@@ -1059,7 +1059,7 @@ label {
     margin-bottom: 5px;
 }
 
-.-graph-div {
+.plotly-graph-div {
     height:450px !important;
     width:650px !important;
 }
@@ -1124,7 +1124,7 @@ label {
         flex-direction: column;
     }
 
-     .-graph-div {
+     .plotly-graph-div {
         width: 50% !important;
     }
 
@@ -1242,7 +1242,7 @@ label {
         width: 100%;
     }
 
-    .-graph-div {
+    .plotly-graph-div {
         width: 20% !important;
     }
 
