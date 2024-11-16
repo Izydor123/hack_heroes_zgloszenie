@@ -1059,6 +1059,11 @@ label {
     margin-bottom: 5px;
 }
 
+.plotly-graph-div {
+    height:450px;
+    width:650px;
+}
+
 .act .hamburger span,
 .columnOn .hamburger span {
     background-color: var(--background-color);
