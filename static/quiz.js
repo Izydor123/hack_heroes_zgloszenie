@@ -13,8 +13,8 @@ async function submitQuiz(event) {
 
     const gameResult = document.getElementById('gameResult');
 
-    gameResult.innerHTML = `Wynik: <strong>${result.correct} punkty</strong> na <strong>${result.total}</strong>`;
+    gameResult.innerHTML = `Wynik: ${result.correct} punkty na ${result.total}`;
     if(result.correct == 3){
-        gameResult.innerHTML = gameResult.innerHTML + "<br><strong>Gratulacje!</strong>"
+        gameResult.innerHTML = gameResult.innerHTML + "<brGratulacje!"
     }
 }
