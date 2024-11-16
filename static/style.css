@@ -1104,7 +1104,6 @@ label {
     .footerSection,
     .classicSection article,
     .classicSection.reverse article,
-    .dropzone-container,
     .allArticlesWrapper 
     {
         flex-direction: column;
@@ -1198,7 +1197,6 @@ label {
     .footerSection,
     .classicSection article,
     .classicSection.reverse article,
-    .dropzone-container,
     .allArticlesWrapper 
     {
         flex-direction: column;
