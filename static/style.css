@@ -1111,6 +1111,10 @@ label {
         flex-direction: column;
     }
 
+    .draggable-container{
+         height: 800px;   
+    }
+
     .footerSection {
         text-align: center;
     }
