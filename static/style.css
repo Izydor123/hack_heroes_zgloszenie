@@ -1059,9 +1059,9 @@ label {
     margin-bottom: 5px;
 }
 
-.plotly-graph-div {
-    height:450px;
-    width:650px;
+.-graph-div {
+    height:450px !important;
+    width:650px !important;
 }
 
 .act .hamburger span,
@@ -1124,8 +1124,8 @@ label {
         flex-direction: column;
     }
 
-     .plotly-graph-div {
-        width: 50%;
+     .-graph-div {
+        width: 50% !important;
     }
 
     .draggable-container{
@@ -1242,8 +1242,8 @@ label {
         width: 100%;
     }
 
-    .plotly-graph-div {
-        width: 20%;
+    .-graph-div {
+        width: 20% !important;
     }
 
     .draggable-container{
