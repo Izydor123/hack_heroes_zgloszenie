@@ -70,7 +70,8 @@ def data_chart(dataset) -> str:
             font=dict(size=10, color="black"))],
         dragmode=False,
         hovermode=None, 
-        showlegend=False
+        showlegend=False,
+        autosize=True
     )
 
     config = {
