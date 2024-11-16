@@ -1105,8 +1105,11 @@ label {
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         width: 73%;
-        background-size: contain;
         margin-bottom: 10px;
+    }
+
+    .articleSlide img{
+        width: 100%;
     }
 
     .footerSection,
@@ -1227,8 +1230,11 @@ label {
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         width: 73%;
-        background-size: contain;
         margin-bottom: 10px;
+    }
+
+    .articleSlide img{
+        width: 100%;
     }
 
     .plot-container{
