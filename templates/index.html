@@ -16,9 +16,9 @@
         href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="{{ url_for('static', filename='WOW/wow.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
     <script>
         new WOW().init();
     </script>
@@ -268,15 +268,16 @@
             });
 
             $('.articleSlider').slick({
+                adaptiveHeight: false,
+                variableWidth: false,
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 autoplay: false,
-                autoplaySpeed: 3000,
                 centerMode: true,
                 centerPadding: '60px',
                 dots: true,
-                prevArrow: '<section class="sliderArrow prevArrow"><img src="svg/strzalkaLewo.svg"></section>',
-                nextArrow: '<section class="sliderArrow nextArrow"><img src="svg/strzalkaPrawo.svg"></section>',
+                prevArrow: "<section class='sliderArrow prevArrow'><img src='{{ url_for('static', filename='svg/strzalkaLewo.svg') }}'></section>",
+                nextArrow: "<section class='sliderArrow nextArrow'><img src='{{ url_for('static', filename='svg/strzalkaPrawo.svg') }}'></section>",
                 arrows: true,
                 responsive: [
                     {
