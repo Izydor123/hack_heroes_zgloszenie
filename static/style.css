@@ -1119,7 +1119,7 @@ label {
         flex-direction: column;
     }
 
-     .main-svg{
+     .plotly-graph-div {
         width: 70%;
     }
 
@@ -1237,7 +1237,7 @@ label {
         width: 100%;
     }
 
-    .main-svg{
+    .plotly-graph-div {
         width: 40%;
     }
 
