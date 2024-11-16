@@ -16,9 +16,9 @@
         href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
 
+    <script src="{{ url_for('static', filename='jQuerry/jQuerry.js') }}"></script>
+    <script src="{{ url_for('static', filename='slick/slick.min.js') }}"></script>
     <script src="{{ url_for('static', filename='WOW/wow.min.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
     <script>
         new WOW().init();
     </script>
@@ -76,7 +76,7 @@
                 <h2 class="headingText mainHeadingText onCenter wow fadeInUp" data-wow-duration="1.5s">Polecane artykuły
                 </h2>
 
-                <section class="articleSlider wow fadeInUp" data-wow-duration="1.5s">
+                <section class="articleSlider wow fadeInUp"  data-wow-duration="1.5s">
                     <a href="{{ url_for('index') }}" class="articleSlideWrapper">
                         <section class="articleSlideContent">
                             <section class="articleSlide picture"><img src="{{ url_for('static', filename='img/e1.jpg') }}"></section>
@@ -266,8 +266,9 @@
             $('.hamburger').click(function () {
                 $('#topMenu').toggleClass('columnOn');
             });
-
+            
             $('.articleSlider').slick({
+                infinity: true,
                 adaptiveHeight: false,
                 variableWidth: false,
                 slidesToShow: 3,
