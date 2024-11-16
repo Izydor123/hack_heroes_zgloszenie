@@ -1059,11 +1059,6 @@ label {
     margin-bottom: 5px;
 }
 
-.plotly-graph-div {
-    height:450px !important;
-    width:350px !important;
-}
-
 .act .hamburger span,
 .columnOn .hamburger span {
     background-color: var(--background-color);
@@ -1122,10 +1117,6 @@ label {
     .classicSection.reverse article,
     .allArticlesWrapper {
         flex-direction: column;
-    }
-
-     .plotly-graph-div {
-        width: 50% !important;
     }
 
     .draggable-container{
@@ -1240,10 +1231,6 @@ label {
 
     .articleSlide img{
         width: 100%;
-    }
-
-    .plotly-graph-div {
-        width: 20% !important;
     }
 
     .draggable-container{
