@@ -28,6 +28,7 @@ draggableItems.forEach((item, index) =>{
     item.addEventListener("touchstart", handleTouchStart, { passive: true });
     item.addEventListener("touchmove", handleTouchMove, { passive: false });
     item.addEventListener("touchend", handleTouchEnd);
+    item.addEventListener("touchcancel", handleTouchCancel);
     item.dataset.index = index;
     item.dataset.inZone = false;
 });
@@ -75,50 +76,72 @@ function handleDrop(event){
     correctPlacements[draggableIndex] = draggableItem.getAttribute('value') === dropZone.getAttribute('value');
 }
 
-function handleTouchStart(event){
+function handleTouchStart(event) {
     draggedItem = event.target;
-    draggedItem.style.cursor = "grabbing";
-    draggedItem.classList.add("dragging");
 
-    draggedItem.dataset.index = event.target.dataset.index;
+    // Start the hold timeout
+    holdTimeout = setTimeout(() => {
+        isHolding = true;
+        draggedItem.classList.add("dragging");
+        draggedItem.style.cursor = "grabbing";
+    }, 300); // Shorter hold duration for better UX
 }
 
-function handleTouchMove(event){
-    event.preventDefault();
-    const touch = event.touches[0];
+function handleTouchMove(event) {
+    if (!isHolding || !draggedItem) return;
 
+    event.preventDefault(); 
+
+    const touch = event.touches[0];
     draggedItem.style.position = "absolute";
     draggedItem.style.left = `${touch.clientX - draggedItem.offsetWidth / 2}px`;
     draggedItem.style.top = `${touch.clientY - draggedItem.offsetHeight / 2}px`;
 }
 
-function handleTouchEnd(event){
+function handleTouchEnd(event) {
+    clearTimeout(holdTimeout);
+
+    if (!isHolding || !draggedItem) {
+        draggedItem = null;
+        return;
+    }
+
     const touch = event.changedTouches[0];
     const dropZone = document.elementFromPoint(touch.clientX, touch.clientY);
 
-    if (dropZone && dropZone.classList.contains("dropzone")){
-        const dropZoneIndex = parseInt(dropZone.dataset.index);
-        const draggableIndex = parseInt(draggedItem.dataset.index);
-        const correctZone = dropZones[dropZoneIndex];
-
-        draggableContainer.removeChild(draggedItem);
-        correctZone.appendChild(draggedItem);
-        
-        draggedItem.classList.add("hidden");
-        draggedItem.setAttribute("draggable", "false");
-        item.dataset.inZone = true;
-        
-        if(dropZone.dataset.itemsInIt[0] = null){
-            dropZone.dataset.itemsInIt[0] = draggableIndex;
-        }
-        else{
-            dropZone.dataset.itemsInIt[1] = draggableIndex;
-        }
-        correctPlacements[draggableIndex] = draggedItem.getAttribute('value') === correctZone.getAttribute('value');
+    if (dropZone && dropZone.classList.contains("dropzone")) {
+        handleDropOnZone(dropZone, draggedItem);
+    } else {
+        resetDraggedItem(draggedItem);
     }
 
-    draggedItem.classList.remove("dragging");
-    draggedItem.style.position = "relative";
+    resetTouchState();
+}
+
+function handleTouchCancel() {
+    clearTimeout(holdTimeout);
+    if (draggedItem) resetDraggedItem(draggedItem);
+    resetTouchState();
+}
+
+
+function handleDropOnZone(dropZone, item) {
+    const dropZoneIndex = parseInt(dropZone.dataset.index);
+    const draggableIndex = parseInt(item.dataset.index);
+
+    draggableContainer.removeChild(item);
+    dropZone.appendChild(item);
+
+    item.classList.add("hidden");
+    item.setAttribute("draggable", "false");
+    dropZone.dataset.itemInIt = draggableIndex;
+
+    correctPlacements[draggableIndex] =
+        item.getAttribute("value") === dropZone.getAttribute("value");
+}
+
+function resetTouchState() {
+    isHolding = false;
     draggedItem = null;
 }
 
