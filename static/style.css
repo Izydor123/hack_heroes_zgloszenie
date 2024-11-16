@@ -1104,13 +1104,23 @@ label {
     .footerSection,
     .classicSection article,
     .classicSection.reverse article,
-    .allArticlesWrapper 
-    {
+    .allArticlesWrapper {
         flex-direction: column;
     }
 
     .draggable-container{
-         height: 400px;   
+         height: 200px;   
+    }
+
+    .dropzone {
+        width: 100px;
+        height: 100px;
+        background-color: #e0e0e0;
+    }
+
+    .dragable {
+        width: 40px;
+        height: 40px;
     }
 
     .footerSection {
@@ -1197,13 +1207,23 @@ label {
     .footerSection,
     .classicSection article,
     .classicSection.reverse article,
-    .allArticlesWrapper 
-    {
+    .allArticlesWrapper {
         flex-direction: column;
     }
 
     .draggable-container{
-         height: 400px;   
+         height: 200px;   
+    }
+
+    .dropzone {
+        width: 100px;
+        height: 100px;
+        background-color: #e0e0e0;
+    }
+
+    .dragable {
+        width: 40px;
+        height: 40px;
     }
 
     .footerSection {
