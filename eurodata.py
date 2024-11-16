@@ -60,8 +60,8 @@ def data_chart(dataset) -> str:
     )
     
     fig.update_layout(
-        width=550,
-        height=350,
+        width=650,
+        height=450,
         xaxis_title="",
         yaxis_title="",
         annotations=[
