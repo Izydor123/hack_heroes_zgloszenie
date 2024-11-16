@@ -79,12 +79,11 @@ function handleDrop(event){
 function handleTouchStart(event) {
     draggedItem = event.target;
 
-    // Start the hold timeout
     holdTimeout = setTimeout(() => {
         isHolding = true;
         draggedItem.classList.add("dragging");
         draggedItem.style.cursor = "grabbing";
-    }, 300); // Shorter hold duration for better UX
+    }, 1000);
 }
 
 function handleTouchMove(event) {
