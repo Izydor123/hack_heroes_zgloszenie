@@ -1108,10 +1108,6 @@ label {
         flex-direction: column;
     }
 
-    .allArticlesWrapper .articleSlideWrapper {
-        width: 73%;
-    }
-
      .plot-container{
         width: 70%;
     }
@@ -1190,7 +1186,7 @@ label {
         background-image: url(svg/listekZielony.svg);
     }
 
-
+    
     .columnOn#topMenu ul {
         display: flex;
         opacity: 1;
