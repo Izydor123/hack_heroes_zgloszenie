@@ -152,7 +152,7 @@ function confirmChoice(){
         modalMessage.innerHTML = "Gratulacje! Wszystkie śmieci znajdują się tam gdzie powinny!";
         if (!localStorage.getItem('firstVisit')) {
             localStorage.setItem('firstVisit', 'true');
-            modalMessage.innerHTML = modalMessage.innerHTML + "<br>Z okazji tego że rozwiązałeś zagadkę pierwszy raz dostajesz bon na o wartości 10zł do wydania w dowolnym pociągu PKP Intercity!<br>Bon:xxxx-xxxx-xxxx";
+            modalMessage.innerHTML = modalMessage.innerHTML + "<br>Z okazji tego że rozwiązałeś zagadkę pierwszy raz, otrzymujesz rabat 10% na bilet kolejowy PKP Intercity<br(dotyczy tylko zakupu przez stronę lub aplikację mobilną)!<br>Bon: xxxx-xxxx-xxxx";
         }
     } 
     else{
