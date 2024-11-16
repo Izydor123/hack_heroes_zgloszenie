@@ -37,11 +37,13 @@ def PLWasteCharts(route) -> list:
             title="Legenda", 
             x=1.0,                  
             y=1.0,
+            orientation="h",
             bgcolor='rgba(255, 255, 255, 0.7)',
             bordercolor='black',
             borderwidth=1,
             font=dict(size=8)
         ),
+        autosize=True,
         dragmode=False,
         hovermode=None, 
     )
@@ -60,6 +62,7 @@ def PLWasteCharts(route) -> list:
             xref="paper", yref="paper",
             x=0, y=-0.2, showarrow=False,
             font=dict(size=10, color="black"))],
+        autosize=True,
         dragmode=False,
         hovermode=None, 
         showlegend=False
