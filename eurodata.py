@@ -78,7 +78,8 @@ def data_chart(dataset) -> str:
         'scrollZoom': False,     
         'displaylogo': False,    
         'editable': False,        
-        'showTips': False             
+        'showTips': False,
+        'responsive': True;
     }
 
     chart_html = pio.to_html(fig, full_html=False, config=config)
