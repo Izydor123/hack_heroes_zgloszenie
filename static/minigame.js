@@ -21,6 +21,8 @@ const draggableContainer = document.getElementById("draggableContainer");
 const correctPlacements = Array(draggableItems.length).fill(false);
 
 let draggedItem = null;
+let holdTimeout = null;
+let isHolding = false;
 
 draggableItems.forEach((item, index) =>{
     item.addEventListener("dragstart", handleDragStart);
@@ -161,6 +163,16 @@ function resetDraggableItem(item, zone){
 
     item.classList.remove("hidden");
     item.setAttribute("draggable", "true");
+}
+
+function resetDraggedItem(item) {
+    item.style.position = "relative";
+    item.style.left = "";
+    item.style.top = "";
+    item.classList.remove("dragging");
+    if (!item.dataset.inZone) {
+        draggableContainer.appendChild(item);
+    }
 }
 
 function confirmChoice(){
