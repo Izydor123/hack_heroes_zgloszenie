@@ -1101,6 +1101,13 @@ label {
 
     }
 
+    .allArticlesWrapper .articleSlideWrapper {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        width: 73%;
+        margin-bottom: 10px;
+    }
+
     .footerSection,
     .classicSection article,
     .classicSection.reverse article,
@@ -1216,7 +1223,10 @@ label {
     }
 
     .allArticlesWrapper .articleSlideWrapper {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
         width: 73%;
+        margin-bottom: 10px;
     }
 
     .plot-container{
