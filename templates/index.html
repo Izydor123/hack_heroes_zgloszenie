@@ -166,7 +166,7 @@
         <section class="separatorWrapper flexOnCenter wow fadeInUp" data-wow-duration="1.5s">
             <img src="{{ url_for('static', filename='img/plot1.png') }}">
             <section class="separatorContent siteWidth wow fadeInUp" data-wow-duration="1.5s">
-                <h2 class="headingTextSeparator">Odkryj pozostałe artykuły!</h2>
+                <h2 class="headingTextSeparator">Dane statystyczne</h2>
                 <p>
                    <p>Tutaj znajdzisz dane na temat wytwarzania odpadów w Polsce i w Europie</p>
                 </p>
@@ -177,10 +177,10 @@
         </section>
     </section>
 
-    <section class="classicSection siteWidth reverse wow fadeIn" data-wow-duration="1s">
+    <section class="classicSection siteWidth currentPosition wow fadeIn currentPosition" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeIn;">
         <article>
-            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s">
-                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s">Segregowanie</h2>
+            <section class="sectionRow content wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <h2 class="headingText wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">Segregowanie</h2>
                 <p class="wow fadeInUp" data-wow-duration="1.5s">
                     Segregowanie śmieci jest kluczowe, ponieważ chroni zasoby naturalne, zmniejsza ilość odpadów na
                     składowiskach, redukuje emisję gazów cieplarnianych, chroni ekosystemy i zwierzęta, przynosi
@@ -191,11 +191,11 @@
                 <a href="{{ url_for('segregacja') }}" class="button wow fadeInUp" data-wow-duration="1.5s"><span>Czytaj
                         więcej</span></a>
             </section>
-            <section class="sectionRow picture flexOnCenter wow fadeInUp" data-wow-duration="1.5s">
-                <img src="{{ url_for('static', filename='img/e8.jpg') }}" alt="obraz">
+            <section class="sectionRow picture wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <img src="{{ url_for('static', filename='img/e8.jpg') }}" alt="plastik">
             </section>
         </article>
-    </section>
+    </section> 
 
     <section class="separatorVideo">
         <section class="separatorWrapper flexOnCenter wow fadeInUp" data-wow-duration="1.5s">
