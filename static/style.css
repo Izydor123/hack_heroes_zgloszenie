@@ -430,7 +430,7 @@ article .picture img {
 
 .articleSlideWrapper {
     position: relative;
-    height: 300px;
+    height: 270px;
     width: auto;
     display: block;
     overflow: hidden;
@@ -1109,7 +1109,7 @@ label {
     }
 
     .allArticlesWrapper .articleSlideWrapper {
-        width: 63%;
+        width: 73%;
     }
 
     .draggable-container{
@@ -1216,7 +1216,7 @@ label {
     }
 
     .allArticlesWrapper .articleSlideWrapper {
-        width: 63%;
+        width: 73%;
     }
 
     .draggable-container{
