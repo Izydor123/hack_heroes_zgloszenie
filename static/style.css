@@ -1112,6 +1112,10 @@ label {
         width: 73%;
     }
 
+     .chart{
+        width: 70%;
+    }
+
     .draggable-container{
          height: 200px;   
     }
@@ -1217,6 +1221,11 @@ label {
 
     .allArticlesWrapper .articleSlideWrapper {
         width: 73%;
+    }
+
+
+    .chart{
+        width: 70%;
     }
 
     .draggable-container{
