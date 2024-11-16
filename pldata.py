@@ -40,7 +40,7 @@ def PLWasteCharts(route) -> list:
             xanchor="center",
             x=0.5
         ),
-        margin=dict(t=50, b=50)
+        margin=dict(t=50, b=50),
         autosize=True,
         dragmode=False,
         hovermode=None, 
