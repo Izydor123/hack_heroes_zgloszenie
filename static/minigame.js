@@ -156,7 +156,7 @@ function confirmChoice(){
         }
     } 
     else{
-        gameResult.textContent = "Niestety, niektóre śmieci nie zostały włożone do odpowiednich pojemników.";
+        modalMessage.innerHTML = "Niestety, śmieci nie zostały włożone do odpowiednich pojemników.";
         resetDraggableItems();
     }
 }
@@ -169,7 +169,7 @@ function closeModal() {
 
 function resetDraggableItems(){
     dropZones.forEach((zone) => {
-        const itemsInZone = Array.from(zone.querySelectorAll('.draggable'));
+        const itemsInZone = Array.from(zone.querySelectorAll('.dragable'));
         
         itemsInZone.forEach((item) => {
             if (zone.getAttribute('value') !== item.getAttribute('value')) {

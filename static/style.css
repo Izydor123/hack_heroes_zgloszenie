@@ -822,24 +822,6 @@ footer {
     width: 40px;
 }
 
-.act .hamburger span,
-.columnOn .hamburger span {
-    background-color: var(--background-color);
-}
-
-.columnOn .hamburger span:nth-child(1) {
-    transform: rotate(45deg) translate(10px, 10px);
-}
-
-.columnOn .hamburger span:nth-child(2) {
-    transform: rotate(45deg) translate(0, 0);
-    opacity: 0;
-}
-
-.columnOn .hamburger span:nth-child(3) {
-    transform: rotate(-45deg) translate(10px, -10px);
-}
-
 .minigame {
     width: 100%;
 }
@@ -903,7 +885,7 @@ footer {
     margin-bottom: 20px;
 }
 
-.draggable {
+.dragable {
     width: 80px;
     height: 80px;
     margin: 5px;
@@ -918,70 +900,70 @@ footer {
     text-align: center;
 }
 
-.draggable:active, .draggable.grabbing {
+.dragable:active, .draggable.grabbing {
     cursor: grabbing;
     transform: scale(1.05);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     opacity: 0.9;
 }
 
-.draggable.locked {
+.dragable.locked {
     cursor: not-allowed;
     opacity: 0.5;
 }
 
 #draggableItem1 {
     background-image: url(img/szklo1.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 #draggableItem2 {
     background-image: url(img/bio1.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 #draggableItem3 {
     background-image: url(img/paipier1.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 #draggableItem4 {
     background-image: url(img/plastik1.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 #draggableItem5 {
     background-image: url(img/plastik2.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 #draggableItem6 {
     background-image: url(img/bio2.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 
 #draggableItem7 {
     background-image: url(img/szklo2.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 
 #draggableItem8 {
     background-image: url(img/paipier2.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 
-.draggable.locked {
+.dragable.locked {
     cursor: not-allowed;
     opacity: 0.5;
 }
@@ -1049,6 +1031,51 @@ footer {
 
 .modal-content button:hover {
     background-color: #218838;
+}
+
+form {
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+fieldset {
+    text-align: left;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.act .hamburger span,
+.columnOn .hamburger span {
+    background-color: var(--background-color);
+}
+
+.columnOn .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.columnOn .hamburger span:nth-child(2) {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0;
+}
+
+.columnOn .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -10px);
 }
 
 @media (max-width: 1280px) {
