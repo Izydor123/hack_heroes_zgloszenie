@@ -72,7 +72,6 @@ def data_chart(dataset) -> str:
         dragmode=False,
         hovermode=None, 
         showlegend=False,
-        autosize=True
     )
 
     config = {
