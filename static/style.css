@@ -430,7 +430,6 @@ article .picture img {
 
 .articleSlideWrapper {
     position: relative;
-    height: 270px;
     width: auto;
     display: block;
     overflow: hidden;
@@ -457,7 +456,7 @@ article .picture img {
 
 .articleSlideText {
     background-color: #fff;
-    height: 80px;
+    height: 50px;
 }
 
 .articleSlideText p {
@@ -525,11 +524,6 @@ article .articleSlideWrapper:hover .picture.articleSlide img {
     background-color: var(--background-color);
     padding-bottom: var(--spacing);
     flex-direction: column;
-}
-
-.separatorImage,
-.separatorVideo {
-    min-height: 50vh;
 }
 
 .separatorImage img,
@@ -1240,7 +1234,7 @@ label {
     .allArticlesWrapper .articleSlideWrapper {
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
-        width: 73%;
+        width: 90%;
         margin-bottom: 10px;
     }
 
