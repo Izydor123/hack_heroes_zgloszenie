@@ -394,7 +394,7 @@ article .sectionRow {
 
 .sectionRow .button,
 .separatorWrapper .button,
-.chartWrapper .button {
+.Wrapper .button {
     margin-top: 30px;
 }
 
@@ -513,14 +513,14 @@ article .articleSlideWrapper:hover .picture.articleSlide img {
     height: 50px;
 }
 
-.chartList,
+.List,
 .separatorImage,
 .separatorVideo,
 .newsletterSection {
     padding-top: var(--spacing);
 }
 
-.chartWrapper {
+.Wrapper {
     width: 100%;
     background-color: var(--background-color);
     padding-bottom: var(--spacing);
@@ -583,14 +583,14 @@ article .articleSlideWrapper:hover .picture.articleSlide img {
     line-height: 2;
 }
 
-.chartTable,
+.Table,
 .userTable {
     padding: 20px;
     border-collapse: collapse;
     width: 100%;
 }
 
-.chartTable td {
+.Table td {
     border: 2px solid var(--color-grey);
     padding: 30px;
     text-align: center;
@@ -612,17 +612,17 @@ tr {
     color: #000;
 }
 
-.chartTable tr td:first-child {
+.Table tr td:first-child {
     border-left: none;
     border-top: none;
 }
 
-.chartTable tr td:last-child {
+.Table tr td:last-child {
     border-right: none;
     border-top: none;
 }
 
-.chartTable tr:last-child td {
+.Table tr:last-child td {
     border-bottom: none;
 }
 
@@ -670,7 +670,7 @@ tr {
     width: 100%;
 }
 
-.chart{
+.svg-container{
     width: 100%;
     max-width: 400px;
     margin: auto;
@@ -1099,7 +1099,7 @@ label {
         padding-right: 20px;
     }
 
-    .chart{
+    .svg-container{
         width: 80%;
     }
 }
@@ -1169,7 +1169,7 @@ label {
         align-self: unset;
     }
 
-    .chart{
+    .svg-container{
         padding: 25px;
         width: 40%;
     }
