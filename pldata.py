@@ -44,7 +44,7 @@ def PLWasteCharts(route) -> list:
         margin=dict(t=50, b=50),
         autosize=True,
         dragmode=False,
-        hovermode=None, 
+        hovermode=None
     )
 
     fig1 = pio.to_html(fig1, full_html=False, config=config)
