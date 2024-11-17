@@ -671,7 +671,7 @@ tr {
 }
 
 .svg-container{
-    width: 500px;
+    width: 400px;
     margin: auto;
 }
 
@@ -1099,7 +1099,7 @@ label {
     }
 
     .svg-container{
-        width: 400px;
+        max-width: 300px;
     }
 }
 
@@ -1280,7 +1280,7 @@ label {
 
     .svg-container{
         padding: 30px;
-        width: 200px;
+        max-width: 200px;
     }
     
     .classicSection.reverse article .content {
