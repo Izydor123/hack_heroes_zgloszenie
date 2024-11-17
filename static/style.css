@@ -1099,7 +1099,7 @@ label {
     }
 
     .svg-container{
-        width: 80%;
+        width: 400px;
     }
 }
 
@@ -1170,7 +1170,7 @@ label {
 
     .svg-container{
         padding: 25px;
-        width: 80%;
+        width: 300px;
     }
 
     .separatorWrapper p {
@@ -1279,8 +1279,8 @@ label {
     }
 
     .svg-container{
-        padding: 50px;
-        width: 13%;
+        padding: 30px;
+        width: 200px;
     }
     
     .classicSection.reverse article .content {
