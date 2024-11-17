@@ -57,7 +57,7 @@ def PLWasteCharts(route) -> list:
             xref="paper", yref="paper",
             x=0, y=-0.2, showarrow=False,
             font=dict(size=10, color="black"))],
-        autosize=True
+        autosize=True,
         dragmode=False,
         hovermode=None)
     fig2 = pio.to_html(fig2, full_html=False, config=config)
