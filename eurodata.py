@@ -66,7 +66,7 @@ def data_chart(dataset) -> str:
         dict(
             text="Źródło danych: Baza danych serwisu Eurostat",
             xref="paper", yref="paper",
-            x=0, y=-0.3, showarrow=False,
+            x=0, y=-0.6, showarrow=False,
             font=dict(size=10, color="black"))],
         dragmode=False,
         margin=dict(t=50, b=50),
