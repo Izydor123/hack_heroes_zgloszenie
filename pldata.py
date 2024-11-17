@@ -36,7 +36,7 @@ def PLWasteCharts(route) -> list:
          legend=dict(
             orientation="h", 
             yanchor="top",
-            y=-0.2,
+            y=-0.3,
             xanchor="center",
             x=0.5
         ),
