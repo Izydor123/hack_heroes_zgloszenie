@@ -68,8 +68,8 @@ def data_chart(dataset) -> str:
             xref="paper", yref="paper",
             x=0, y=-0.6, showarrow=False,
             font=dict(size=10, color="black"))],
+        autosize=True,
         dragmode=False,
-        margin=dict(t=50, b=50),
         hovermode=None, 
         showlegend=False,
         autosize=True
