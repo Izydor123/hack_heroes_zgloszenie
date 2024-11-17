@@ -31,7 +31,7 @@ def PLWasteCharts(route) -> list:
         dict(
             text="Źródło danych: Baza danych lokalnych GUS",
             xref="paper", yref="paper",
-            x=0, y=-0.2, showarrow=False,
+            x=0, y=-0.3, showarrow=False,
             font=dict(size=10, color="black"))],
          legend=dict(
             orientation="h", 
