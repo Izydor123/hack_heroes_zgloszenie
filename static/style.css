@@ -671,8 +671,7 @@ tr {
 }
 
 .svg-container{
-    width: 100%;
-    max-width: 500px;
+    width: 500px;
     margin: auto;
 }
 
