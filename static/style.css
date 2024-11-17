@@ -962,25 +962,9 @@ footer {
     background-repeat: no-repeat;
 }
 
-
 .dragable.locked {
     cursor: not-allowed;
     opacity: 0.5;
-}
-
-#confirmButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-#confirmButton:hover {
-    background-color: #45a049;
 }
 
 .hidden {
