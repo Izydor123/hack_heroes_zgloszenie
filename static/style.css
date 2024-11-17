@@ -671,7 +671,8 @@ tr {
 }
 
 .svg-container{
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     margin: auto;
 }
 
@@ -1170,7 +1171,7 @@ label {
 
     .svg-container{
         padding: 25px;
-        width: 300px;
+        width: 60%;
     }
 
     .separatorWrapper p {
@@ -1280,7 +1281,7 @@ label {
 
     .svg-container{
         padding: 30px;
-        max-width: 200px;
+        width: 40%;
     }
     
     .classicSection.reverse article .content {
