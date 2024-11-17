@@ -956,7 +956,7 @@ footer {
 }
 
 
-#draggableItem8 {
+#draggableItem8 { 
     background-image: url(img/paipier2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -999,22 +999,8 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.modal-content h2 {
-    margin-bottom: 15px;
-}
-
 .modal-content button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.modal-content button:hover {
-    background-color: #218838;
+    margin-top: 30px;
 }
 
 form {
