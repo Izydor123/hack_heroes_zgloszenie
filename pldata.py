@@ -28,6 +28,7 @@ def PLWasteCharts(route) -> list:
         xaxis_title="",
         yaxis_title="",
         annotations=[
+        annotations=[
         dict(
             text="Źródło danych: Baza danych lokalnych GUS",
             xref="paper", yref="paper",
