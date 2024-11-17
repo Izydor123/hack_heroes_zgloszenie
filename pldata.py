@@ -24,10 +24,9 @@ def PLWasteCharts(route) -> list:
         fig1.add_trace(go.Scatter(x=ogolne_nazwa['Rok'], y=ogolne_nazwa['Masa wytworzonych odpadów(w tonach)'], mode='lines', name=nazwa))
 
    
-    fig1.update_layout(
+    fig1.update_layout()
         xaxis_title="",
         yaxis_title="",
-        annotations=[
         annotations=[
         dict(
             text="Źródło danych: Baza danych lokalnych GUS",
@@ -45,7 +44,6 @@ def PLWasteCharts(route) -> list:
         autosize=True,
         dragmode=False,
         hovermode=None
-    )
 
     fig1 = pio.to_html(fig1, full_html=False, config=config)
 
