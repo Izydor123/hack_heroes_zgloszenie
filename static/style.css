@@ -672,7 +672,7 @@ tr {
 
 .chart{
     width: 100%;
-    max-width: 1000px;
+    max-width: 400px;
     margin: auto;
 }
 
@@ -1165,6 +1165,10 @@ label {
         align-self: unset;
     }
 
+    .chart{
+        padding: 25px;
+    }
+
     .separatorWrapper p {
         margin: 0 10px;
     }
@@ -1270,6 +1274,10 @@ label {
         padding-right: 0;
     }
 
+    .chart{
+        padding: 50px;
+    }
+    
     .classicSection.reverse article .content {
         padding-left: 0;
     }
